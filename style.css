@@ -80,8 +80,8 @@ body {
 /* Dots */
 
 .dots-container {
-    position: fixed;
-    top: 50px; /* same vertical line as Pac-Man */
+    position: absolute;
+    top: 40px; /* same vertical line as Pac-Man */
     left: 0;
     width: 100vw;
     height: 10px;
