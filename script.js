@@ -2,13 +2,33 @@
 
 async function loadResume() {
     try {
-        console.log('Loading resume…');
+        console.log('Attempting to load content.json…');
 
-        const res = await fetch('resume.json');
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        // Try relative path first, then absolute if that fails
+        let res = await fetch('./content.json');
+        console.log('Fetch ./content.json →', res.status, res.statusText);
 
-        const data = await res.json();
-        console.log('Resume JSON:', data);
+        if (!res.ok) {
+        console.warn('Retrying with absolute path /content.json');
+        res = await fetch('/content.json');
+        console.log('Fetch /content.json →', res.status, res.statusText);
+        }
+
+        if (!res.ok) {
+        throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);
+        }
+
+        const raw = await res.text();
+        console.log('Raw response text:', raw.slice(0, 200));
+
+        let data;
+        try {
+        data = JSON.parse(raw);
+        } catch (parseErr) {
+        throw new Error(`JSON parse error: ${parseErr.message}`);
+        }
+
+        console.log('Parsed JSON:', data);
 
         // Header rendering
         document.getElementById('name').textContent = data.name;
@@ -52,15 +72,17 @@ async function loadResume() {
         });
 
     } catch (err) {
-        console.error('Failed to load or parse resume.json:', err);
+        console.error('Error in loadResume:', err);
         document.body.innerHTML = `
         <div style="
-            color: #E63946;
+            color: var(--accent1);
             font-family: Georgia, serif;
             padding: 2rem;
             text-align: center;
         ">
-            Error loading resume data. Check browser console for details.
+            <h2>Failed to load content.json</h2>
+            <p>${err.message}</p>
+            <p>See console for more details.</p>
         </div>
         `;
     }
