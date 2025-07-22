@@ -2,41 +2,46 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Arcade CV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Arcade Pac-Man CV</title>
+
+        <!-- Animate.css -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
 
         <!-- AOS scroll animations -->
         <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 
-        <!-- Animate.css entrance effects -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- Press Start 2P font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+        />
 
-        <!-- Press Start 2P pixel font -->
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-        <!-- Main stylesheet -->
+        <!-- Main CSS -->
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <!-- Pac‑Man chomping across the top -->
-        <div id="pacman" aria-hidden="true"></div>
+        <!-- Pac-Man animation -->
+        <div class="pacman" aria-hidden="true" role="presentation">
+            <div class="pacman-top"></div>
+            <div class="pacman-bottom"></div>
+            <div class="feed"></div>
+        </div>
 
-        <!-- Site header -->
         <header class="site-header" data-aos="bounce-in">
             <h1 id="name"></h1>
             <p id="title"></p>
             <nav id="contact"></nav>
         </header>
 
-        <!-- Main content -->
         <main id="content"></main>
 
-        <!-- AOS script -->
+        <!-- Scripts -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <!-- Rendering script -->
         <script src="script.js"></script>
-
-        <!-- Initialize AOS -->
         <script>
             AOS.init({ duration: 600, once: false });
         </script>
