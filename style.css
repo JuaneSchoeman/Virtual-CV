@@ -1,6 +1,69 @@
-/* style.css enhancements */
+/* style.css */
 
-/* Section “cards” */
+/* Color palette */
+:root {
+    --bg: #FAF3E0;
+    --fg: #2B2D42;
+    --accent1: #E63946;
+    --accent2: #457B9D;
+    --accent3: #F4D35E;
+}
+
+/* Reset & typography */
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Link styling */
+a {
+    color: var(--accent1);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+}
+a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 3px;
+    background: var(--accent3);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Header styling */
+.site-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#name {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    transform-origin: bottom center;
+    animation: bookOpen 0.8s ease-out;
+}
+#title {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: var(--accent2);
+    font-style: italic;
+}
+
+/* Section card styling */
 .section {
     background: #FFFFFF;
     border-radius: 8px;
@@ -14,7 +77,16 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-/* Drop‑cap for headings */
+/* Heading drop‑cap */
+.section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--accent3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    position: relative;
+}
 .section h2::first-letter {
     font-size: 3rem;
     color: var(--accent2);
@@ -24,7 +96,19 @@
     font-family: 'Merriweather', serif;
 }
 
-/* Skill bars */
+/* Date styling */
+.dates {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent2);
+    margin-bottom: 0.5rem;
+}
+.section h3 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Skill bar styling */
 .skill-bar {
     margin: 0.75rem 0;
 }
@@ -45,7 +129,7 @@
     transition: width 1.2s ease-out;
 }
 
-/* Floating ribbon */
+/* Floating ribbon styling */
 #ribbon {
     position: fixed;
     top: 2rem;
@@ -56,4 +140,10 @@
 #ribbon:hover {
     transform: rotate(10deg) scale(1.1);
     opacity: 1;
+}
+
+/* Book‑open animation */
+@keyframes bookOpen {
+    0%   { transform: rotateX(90deg); opacity: 0; }
+    100% { transform: rotateX(0);      opacity: 1; }
 }

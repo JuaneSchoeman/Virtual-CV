@@ -2,25 +2,23 @@
 
 async function loadResume() {
     try {
-        // Attempt to fetch the CV data
+        // Fetch data
         const res = await fetch('content.json');
         if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-
-        // Parse JSON
         const data = await res.json();
 
         // Render header
         document.getElementById('name').textContent  = data.name;
         document.getElementById('title').textContent = data.title;
         const nav = document.getElementById('contact');
-        Object.entries(data.contact).forEach(([key, val]) => {
+        Object.entries(data.contact).forEach(([k, v]) => {
         const a = document.createElement('a');
-        a.href      = (key === 'email' ? 'mailto:' : 'https://') + val;
-        a.textContent = key;
+        a.href       = (k === 'email' ? 'mailto:' : 'https://') + v;
+        a.textContent = k;
         nav.appendChild(a);
         });
 
-        // Render each section
+        // Render sections
         const main = document.getElementById('content');
         data.sections.forEach((sec, i) => {
         const section = document.createElement('section');
@@ -30,32 +28,52 @@ async function loadResume() {
 
         sec.items.forEach(item => {
             const div = document.createElement('div');
+
             if (item.role) {
+            // Experience item
             div.innerHTML = `
                 <h3>${item.role} @ ${item.company}</h3>
                 <span class="dates">${item.dates}</span>
                 <ul>${item.details.map(d => `<li>${d}</li>`).join('')}</ul>
             `;
-            } else {
+            } else if (item.degree) {
+            // Education item
             div.innerHTML = `
                 <h3>${item.degree}, ${item.school}</h3>
                 <span class="dates">${item.dates}</span>
             `;
+            } else if (item.skill) {
+            // Skill bar item
+            div.innerHTML = `
+                <div class="skill-bar">
+                <div class="skill-bar-label">${item.skill}</div>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill" data-level="${item.level}"></div>
+                </div>
+                </div>
+            `;
             }
+
             section.appendChild(div);
         });
 
         main.appendChild(section);
         });
 
+        // Animate skill bars
+        document.querySelectorAll('.skill-bar-fill').forEach(el => {
+        const pct = el.getAttribute('data-level');
+        setTimeout(() => { el.style.width = pct + '%'; }, 200);
+        });
+
     } catch (err) {
-        console.error('loadResume error:', err);
+        console.error(err);
         document.body.innerHTML = `
         <div style="
             padding: 2rem;
             text-align: center;
             font-family: Georgia, serif;
-            color: #E63946;
+            color: var(--accent1);
         ">
             <h2>Could not load content.json</h2>
             <pre>${err.message}</pre>

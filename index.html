@@ -1,24 +1,43 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Virtual CV</title>
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Virtual CV</title>
+
+        <!-- AOS scroll animations -->
+        <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+        <!-- Merriweather font -->
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <!-- Main stylesheet -->
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-    <header class="site-header" data-aos="fade-down">
-        <h1 id="name"></h1>
-        <p id="title"></p>
-        <nav id="contact"></nav>
-    </header>
 
-    <main id="content"></main>
+        <!-- Floating ribbon accent -->
+        <svg id="ribbon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--accent1)" viewBox="0 0 24 24">
+            <path d="M6 2h12v20l-6-4-6 4V2z"/>
+        </svg>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script> AOS.init({ duration: 800, once: true }); </script>
-</body>
+        <!-- Site header -->
+        <header class="site-header" data-aos="fade-down">
+            <h1 id="name"></h1>
+            <p id="title"></p>
+            <nav id="contact"></nav>
+        </header>
+
+        <!-- Main content -->
+        <main id="content" class="site-content"></main>
+
+        <!-- AOS script -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <!-- Resume rendering script -->
+        <script src="script.js"></script>
+        <!-- AOS init -->
+        <script> AOS.init({ duration: 800, once: true }); </script>
+
+    </body>
 </html>

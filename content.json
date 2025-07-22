@@ -30,6 +30,15 @@
             "dates": "2018–2022"
             }
         ]
+        },
+        {
+        "heading": "Skills",
+        "items": [
+            { "skill": "JavaScript",      "level": 90 },
+            { "skill": "HTML & CSS",      "level": 95 },
+            { "skill": "Node.js",         "level": 80 },
+            { "skill": "React",           "level": 85 }
+        ]
         }
     ]
 }
