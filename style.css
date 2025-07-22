@@ -27,21 +27,30 @@ body {
     width: 40px;
     height: 40px;
     background: var(--accent1);
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(45deg);
+    clip-path: circle(50% at 50% 50%);
     animation:
-        chomping 0.3s steps(2) infinite,
-        slide 8s linear infinite;
+        chomping 0.5s ease-in-out infinite,
+        slide 6s linear infinite;
     z-index: 10;
 }
 @keyframes chomping {
-    0%   { clip-path: polygon(0% 0%, 100% 50%, 0% 100%); }
-    50%  { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-    100% { clip-path: polygon(0% 0%, 100% 50%, 0% 100%); }
+    0%, 100% {
+        /* mouth closed: perfect circle */
+        clip-path: circle(50% at 50% 50%);
+    }
+    50% {
+        /* mouth open: triangle to the right */
+        clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    }
 }
+
 @keyframes slide {
-    0%   { left: -50px; }
-    100% { left: calc(100% + 50px); }
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(110vw);
+    }
 }
 
 /* Header */
