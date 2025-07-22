@@ -1,8 +1,36 @@
+
 {
-    "about": "<h2>About Me</h2><p><strong>[Your Name]</strong> — <em>[Role]</em> with passion for [interests].</p>",
-    "education": "<h2>Education</h2><ul><li><strong>[Degree]</strong>, [University] (<time>Year</time>)</li></ul>",
-    "skills": "<h2>Skills</h2><ul><li>HTML/CSS/JavaScript</li><li>Python, Java</li><li>Problem Solving &amp; Scrum</li></ul>",
-    "experience": "<h2>Experience</h2><ul><li><strong>[Job Title]</strong> at [Company] (<time>Year–Year</time>)</li></ul>",
-    "projects": "<h2>Projects</h2><ul><li><strong>[Project Name]</strong> — [Short description].</li></ul>",
-    "contact": "<h2>Contact</h2><p>Email: <a href=\"mailto:your.email@example.com\">your.email@example.com</a></p><p>LinkedIn: <a href=\"https://linkedin.com/in/yourname\" target=\"_blank\">linkedin.com/in/yourname</a></p>"
+    "name": "Your Name",
+    "title": "Full-Stack Developer",
+    "contact": {
+        "email": "you@example.com",
+        "linkedin": "your-linkedin",
+        "github": "your-github"
+    },
+    "sections": [
+        {
+        "heading": "Experience",
+        "items": [
+            {
+            "role": "Software Engineer",
+            "company": "Acme Corp",
+            "dates": "2022–Present",
+            "details": [
+                "Built X feature with React & Node.js",
+                "Optimized Y workflow, reducing load by 40%"
+            ]
+            }
+        ]
+        },
+        {
+        "heading": "Education",
+        "items": [
+            {
+            "degree": "B.Sc. Computer Science",
+            "school": "University XYZ",
+            "dates": "2018–2022"
+            }
+        ]
+        }
+    ]
 }
