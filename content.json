@@ -34,10 +34,10 @@
         {
         "heading": "Skills",
         "items": [
-            { "skill": "JavaScript",      "level": 90 },
-            { "skill": "HTML & CSS",      "level": 95 },
-            { "skill": "Node.js",         "level": 80 },
-            { "skill": "React",           "level": 85 }
+            { "skill": "JavaScript", "level": 90 },
+            { "skill": "HTML & CSS", "level": 95 },
+            { "skill": "Node.js", "level": 80 },
+            { "skill": "React", "level": 85 }
         ]
         }
     ]

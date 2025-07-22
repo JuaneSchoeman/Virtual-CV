@@ -1,8 +1,6 @@
 // script.js
-
 async function loadResume() {
     try {
-        // Fetch data
         const res = await fetch('content.json');
         if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
         const data = await res.json();
@@ -13,16 +11,17 @@ async function loadResume() {
         const nav = document.getElementById('contact');
         Object.entries(data.contact).forEach(([k, v]) => {
         const a = document.createElement('a');
-        a.href       = (k === 'email' ? 'mailto:' : 'https://') + v;
+        a.href        = (k === 'email' ? 'mailto:' : 'https://') + v;
         a.textContent = k;
         nav.appendChild(a);
         });
 
         // Render sections
         const main = document.getElementById('content');
+        const effects = ['fadeInUp','fadeInLeft','fadeInRight','fadeInDown'];
         data.sections.forEach((sec, i) => {
         const section = document.createElement('section');
-        section.className = 'section';
+        section.className = `section animate__animated animate__${effects[i % effects.length]}`;
         section.setAttribute('data-aos', i % 2 === 0 ? 'fade-right' : 'fade-left');
         section.innerHTML = `<h2>${sec.heading}</h2>`;
 
@@ -30,20 +29,17 @@ async function loadResume() {
             const div = document.createElement('div');
 
             if (item.role) {
-            // Experience item
             div.innerHTML = `
                 <h3>${item.role} @ ${item.company}</h3>
                 <span class="dates">${item.dates}</span>
                 <ul>${item.details.map(d => `<li>${d}</li>`).join('')}</ul>
             `;
             } else if (item.degree) {
-            // Education item
             div.innerHTML = `
                 <h3>${item.degree}, ${item.school}</h3>
                 <span class="dates">${item.dates}</span>
             `;
             } else if (item.skill) {
-            // Skill bar item
             div.innerHTML = `
                 <div class="skill-bar">
                 <div class="skill-bar-label">${item.skill}</div>
@@ -83,3 +79,10 @@ async function loadResume() {
 }
 
 loadResume();
+
+// Parallax scroll for ribbon and header
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    document.getElementById('ribbon').style.transform         = `translateY(${y * 0.2}px)`;
+    document.querySelector('.site-header').style.transform   = `translateY(${y * 0.1}px)`;
+});
