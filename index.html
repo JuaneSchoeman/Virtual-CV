@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,12 +18,8 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-
         <!-- Pac‑Man chomping across the top -->
         <div id="pacman" aria-hidden="true"></div>
-
-        <!-- Pac‑Man sound effect -->
-        <audio id="waka" src="waka-sound.mp3" preload="auto"></audio>
 
         <!-- Site header -->
         <header class="site-header" data-aos="bounce-in">
@@ -41,18 +36,9 @@
         <!-- Rendering script -->
         <script src="script.js"></script>
 
-        <!-- AOS init and waka hover -->
+        <!-- Initialize AOS -->
         <script>
             AOS.init({ duration: 600, once: false });
-
-            // Play waka sound on hover over sections or skill bars
-            document.body.addEventListener('mouseover', e => {
-            if (e.target.matches('.section') || e.target.closest('.skill-bar-fill')) {
-                const audio = document.getElementById('waka');
-                audio.currentTime = 0;
-                audio.play();
-            }
-            });
         </script>
     </body>
 </html>
