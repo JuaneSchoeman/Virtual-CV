@@ -1,8 +1,9 @@
+// script.js
 async function loadResume() {
     const res = await fetch('resume.json');
     const data = await res.json();
 
-    // Header
+    // Header rendering
     document.getElementById('name').textContent = data.name;
     document.getElementById('title').textContent = data.title;
     const nav = document.getElementById('contact');
@@ -13,7 +14,7 @@ async function loadResume() {
         nav.appendChild(a);
     }
 
-    // Main content
+    // Main content rendering
     const main = document.getElementById('content');
     data.sections.forEach((sec, i) => {
         const section = document.createElement('section');
