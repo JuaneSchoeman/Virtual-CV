@@ -1,106 +1,59 @@
-/* style.css */
+/* style.css enhancements */
 
-/* Bookish Vibrant palette */
-:root {
-    --bg: #FAF3E0;
-    --fg: #2B2D42;
-    --accent1: #E63946;
-    --accent2: #457B9D;
-    --accent3: #F4D35E;
-}
-
-/* Reset and typography settings */
-* {
-    box-sizing: border-box;
-    margin: 0; padding: 0;
-}
-body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: Georgia, serif;
-    line-height: 1.6;
-    padding: 2rem;
-  /* Texture overlay (linen.png) */
-  /* background-image: url('linen.png');
-     background-size: cover; */
-}
-
-/* Bookmark ribbon link style */
-a {
-    color: var(--accent1);
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 2px;
-}
-a::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 100%; height: 3px;
-    background: var(--accent3);
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-a:hover::after {
-    transform: scaleX(1);
-}
-
-/* Site header styling */
-.site-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-#name {
-    font-family: 'Merriweather', serif;
-    font-size: 3rem;
-    letter-spacing: 1px;
-    display: inline-block;
-    transform-origin: bottom center;
-    animation: bookOpen 0.8s ease-out;
-}
-#title {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
-    color: var(--accent2);
-    font-style: italic;
-}
-
-/* Section heading styling */
+/* Section “cards” */
 .section {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 1.5rem;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.section h2 {
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Drop‑cap for headings */
+.section h2::first-letter {
+    font-size: 3rem;
+    color: var(--accent2);
+    float: left;
+    line-height: 1;
+    margin-right: 0.25rem;
     font-family: 'Merriweather', serif;
-    font-size: 1.75rem;
-    border-bottom: 2px solid var(--accent3);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    position: relative;
-}
-.section h2::before {
-    content: '“';
-    position: absolute;
-    left: -1.2rem; top: -0.3rem;
-    font-size: 2rem;
-    color: var(--accent2);
 }
 
-/* Date display styling */
-.dates {
-    display: block;
+/* Skill bars */
+.skill-bar {
+    margin: 0.75rem 0;
+}
+.skill-bar-label {
     font-size: 0.9rem;
-    color: var(--accent2);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
-.section h3 {
-    font-size: 1.2rem;
-    margin-top: 1rem;
+.skill-bar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 8px;
+}
+.skill-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent1);
+    transition: width 1.2s ease-out;
 }
 
-/* Heading open animation */
-@keyframes bookOpen {
-    0%   { transform: rotateX(90deg); opacity: 0; }
-    100% { transform: rotateX(0);      opacity: 1; }
+/* Floating ribbon */
+#ribbon {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#ribbon:hover {
+    transform: rotate(10deg) scale(1.1);
+    opacity: 1;
 }
