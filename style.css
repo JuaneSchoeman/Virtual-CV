@@ -1,16 +1,17 @@
-/* ————————— BODY SETTINGS ————————— */
+/* ————— BODY SETTINGS ————— */
 body {
     font-family: 'Georgia', serif;   /* Old-book feel font */
     margin: 0;
-    background: #fdf6e3;             /* Parchment background */
-    color: #333;                     /* Dark charcoal text */
+    background: linear-gradient(120deg, #fdf6e3 0%, #e8dcb2 100%); /* Soft parchment gradient */
+    color: #333;
 }
 
 /* ————— HEADER STYLING ————— */
 header {
     text-align: center;
     padding: 2rem;
-    background: #d3c6a5;             /* Soft tan bar */
+    background: #cbbfad;             /* Muted purple-tan */
+    color: #2b1b17;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
@@ -19,67 +20,81 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem;
-    gap: 1rem;
+    padding: 3rem;
+    gap: 2.5rem;                     /* extra separation */
 }
 
 /* ————— BOOK CONTAINER ————— */
 .book {
     position: relative;
-    width: 120px;
-    height: 180px;
-    perspective: 600px;              /* 3D flip perspective */
+    width: 130px;
+    height: 200px;
+    perspective: 800px;              /* stronger 3D effect */
     cursor: pointer;
+    transition: transform 0.2s;
+}
+.book:hover {
+    transform: translateY(-5px);
 }
 
-/* Common styles for cover + pages */
+/* Common for cover + pages */
 .book .cover,
 .book .pages {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0; left: 0;
-    backface-visibility: hidden;     /* Hide back side during flip */
-    border-radius: 4px;
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-    transition: transform 0.6s ease;  /* Smooth flip effect */
+    backface-visibility: hidden;
+    border-radius: 6px;
+    box-shadow: 2px 6px 12px rgba(0,0,0,0.3);
+    transition: transform 0.6s ease;
 }
 
-/* Front spine of book */
+/* Cover styling with alternating colors */
+.book:nth-child(1) .cover { background: #d77a61; }
+.book:nth-child(2) .cover { background: #8db596; }
+.book:nth-child(3) .cover { background: #f2c14e; }
+.book:nth-child(4) .cover { background: #76a5af; }
+.book:nth-child(5) .cover { background: #d68c45; }
+.book:nth-child(6) .cover { background: #b5838d; }
 .book .cover {
-    background: #a67c52;             /* Brown cover */
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform-origin: left;          /* Hinge on left edge */
+    transform-origin: left;
     padding: 0.5rem;
     font-weight: bold;
 }
 
-/* Inside pages (hidden initially) */
+/* Pages hidden initially */
 .book .pages {
-    background: #fff;                /* White pages */
-    transform-origin: left;          /* Hinge on same edge */
-    transform: rotateY(-180deg);     /* Hidden by default */
+    background: #fff;
+    transform-origin: left;
+    transform: rotateY(-180deg);
     padding: 1rem;
     overflow: auto;
 }
 
-/* Flip open states */
-.book.open .cover {
-  transform: rotateY(-160deg);     /* Cover swings open */
+/* Hover opens the book like real book */
+.book:hover .cover {
+    transform: rotateY(-160deg);
 }
-.book.open .pages {
-  transform: rotateY(0);           /* Pages appear */
+.book:hover .pages {
+    transform: rotateY(0);
 }
+
+/* Keep click open state too */
+.book.open .cover { transform: rotateY(-160deg); }
+.book.open .pages { transform: rotateY(0); }
 
 /* ————— PAGE CONTENT BOX ————— */
 #page-content {
     margin: 2rem auto;
     max-width: 800px;
     padding: 1.5rem;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fffdf6;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0d4b7;
 }
