@@ -1,0 +1,8 @@
+{
+    "about": "<h2>About Me</h2><p><strong>[Your Name]</strong> — <em>[Role]</em> with passion for [interests].</p>",
+    "education": "<h2>Education</h2><ul><li><strong>[Degree]</strong>, [University] (<time>Year</time>)</li></ul>",
+    "skills": "<h2>Skills</h2><ul><li>HTML/CSS/JavaScript</li><li>Python, Java</li><li>Problem Solving &amp; Scrum</li></ul>",
+    "experience": "<h2>Experience</h2><ul><li><strong>[Job Title]</strong> at [Company] (<time>Year–Year</time>)</li></ul>",
+    "projects": "<h2>Projects</h2><ul><li><strong>[Project Name]</strong> — [Short description].</li></ul>",
+    "contact": "<h2>Contact</h2><p>Email: <a href=\"mailto:your.email@example.com\">your.email@example.com</a></p><p>LinkedIn: <a href=\"https://linkedin.com/in/yourname\" target=\"_blank\">linkedin.com/in/yourname</a></p>"
+}

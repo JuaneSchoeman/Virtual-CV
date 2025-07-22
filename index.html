@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Virtual CV Library</title>
+    <!-- Link stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Header area: title + subtitle -->
+<header>
+    <h1>📚 My Virtual CV Library</h1>
+    <p>Welcome to book‑themed CV!</p>
+</header>
+
+<!-- Bookshelf grid of books -->
+<main class="bookshelf">
+    <!-- Click books to flip open -->
+    <div class="book" data-section="about">
+        <div class="cover">About Me</div>
+        <div class="pages"></div>
+    </div>
+    <div class="book" data-section="education">
+        <div class="cover">Education</div>
+        <div class="pages"></div>
+    </div>
+    <div class="book" data-section="skills">
+        <div class="cover">Skills</div>
+        <div class="pages"></div>
+    </div>
+    <div class="book" data-section="experience">
+        <div class="cover">Experience</div>
+        <div class="pages"></div>
+    </div>
+    <div class="book" data-section="projects">
+        <div class="cover">Projects</div>
+        <div class="pages"></div>
+    </div>
+    <div class="book" data-section="contact">
+        <div class="cover">Contact</div>
+        <div class="pages"></div>
+    </div>
+</main>
+
+    <!-- Content display area -->
+    <section id="page-content"></section>
+
+    <!-- Include script logic -->
+    <script src="script.js"></script>
+</body>
+</html>
