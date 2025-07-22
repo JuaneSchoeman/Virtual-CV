@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Virtual CV</title>
+        <title>Arcade CV</title>
 
         <!-- AOS scroll animations -->
         <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
@@ -12,34 +12,47 @@
         <!-- Animate.css entrance effects -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-        <!-- Merriweather font -->
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <!-- Press Start 2P pixel font -->
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
         <!-- Main stylesheet -->
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <!-- Floating ribbon accent -->
-        <svg id="ribbon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--accent1)" viewBox="0 0 24 24">
-            <path d="M6 2h12v20l-6-4-6 4V2z"/>
-        </svg>
+
+        <!-- Pac‑Man chomping across the top -->
+        <div id="pacman" aria-hidden="true"></div>
+
+        <!-- Pac‑Man sound effect -->
+        <audio id="waka" src="waka-sound.mp3" preload="auto"></audio>
 
         <!-- Site header -->
-        <header class="site-header" data-aos="fade-down">
+        <header class="site-header" data-aos="bounce-in">
             <h1 id="name"></h1>
             <p id="title"></p>
             <nav id="contact"></nav>
         </header>
 
         <!-- Main content -->
-        <main id="content" class="site-content"></main>
+        <main id="content"></main>
 
         <!-- AOS script -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <!-- Resume rendering & parallax script -->
+        <!-- Rendering script -->
         <script src="script.js"></script>
-        <!-- AOS init -->
-        <script> AOS.init({ duration: 800, once: true }); </script>
 
+        <!-- AOS init and waka hover -->
+        <script>
+            AOS.init({ duration: 600, once: false });
+
+            // Play waka sound on hover over sections or skill bars
+            document.body.addEventListener('mouseover', e => {
+            if (e.target.matches('.section') || e.target.closest('.skill-bar-fill')) {
+                const audio = document.getElementById('waka');
+                audio.currentTime = 0;
+                audio.play();
+            }
+            });
+        </script>
     </body>
 </html>

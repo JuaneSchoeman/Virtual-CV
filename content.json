@@ -1,6 +1,6 @@
 {
     "name": "Your Name",
-    "title": "Full-Stack Developer",
+    "title": "Arcade Developer",
     "contact": {
         "email": "you@example.com",
         "linkedin": "your-linkedin",
@@ -11,12 +11,12 @@
         "heading": "Experience",
         "items": [
             {
-            "role": "Software Engineer",
-            "company": "Acme Corp",
-            "dates": "2022–Present",
+            "role": "Game Developer",
+            "company": "Retro Studios",
+            "dates": "2020–Present",
             "details": [
-                "Built X feature with React & Node.js",
-                "Optimized Y workflow, reducing load by 40%"
+                "Designed arcade-style levels in Unity",
+                "Optimized sprite rendering for 60fps"
             ]
             }
         ]
@@ -25,19 +25,19 @@
         "heading": "Education",
         "items": [
             {
-            "degree": "B.Sc. Computer Science",
+            "degree": "B.Sc. Game Design",
             "school": "University XYZ",
-            "dates": "2018–2022"
+            "dates": "2016–2020"
             }
         ]
         },
         {
         "heading": "Skills",
         "items": [
-            { "skill": "JavaScript", "level": 90 },
-            { "skill": "HTML & CSS", "level": 95 },
-            { "skill": "Node.js", "level": 80 },
-            { "skill": "React", "level": 85 }
+            { "skill": "C#",       "level": 90 },
+            { "skill": "Unity",    "level": 85 },
+            { "skill": "JavaScript","level": 80 },
+            { "skill": "HTML & CSS","level": 95 }
         ]
         }
     ]

@@ -1,4 +1,5 @@
 // script.js
+
 async function loadResume() {
     try {
         const res = await fetch('content.json');
@@ -16,7 +17,7 @@ async function loadResume() {
         nav.appendChild(a);
         });
 
-        // Render sections
+        // Render sections with Animate.css effects
         const main = document.getElementById('content');
         const effects = ['fadeInUp','fadeInLeft','fadeInRight','fadeInDown'];
         data.sections.forEach((sec, i) => {
@@ -27,7 +28,6 @@ async function loadResume() {
 
         sec.items.forEach(item => {
             const div = document.createElement('div');
-
             if (item.role) {
             div.innerHTML = `
                 <h3>${item.role} @ ${item.company}</h3>
@@ -49,17 +49,15 @@ async function loadResume() {
                 </div>
             `;
             }
-
             section.appendChild(div);
         });
-
         main.appendChild(section);
         });
 
         // Animate skill bars
         document.querySelectorAll('.skill-bar-fill').forEach(el => {
         const pct = el.getAttribute('data-level');
-        setTimeout(() => { el.style.width = pct + '%'; }, 200);
+        setTimeout(() => { el.style.width = pct + '%'; }, 500);
         });
 
     } catch (err) {
@@ -68,7 +66,7 @@ async function loadResume() {
         <div style="
             padding: 2rem;
             text-align: center;
-            font-family: Georgia, serif;
+            font-family: 'Press Start 2P', monospace;
             color: var(--accent1);
         ">
             <h2>Could not load content.json</h2>
@@ -79,10 +77,3 @@ async function loadResume() {
 }
 
 loadResume();
-
-// Parallax scroll for ribbon and header
-window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    document.getElementById('ribbon').style.transform         = `translateY(${y * 0.2}px)`;
-    document.querySelector('.site-header').style.transform   = `translateY(${y * 0.1}px)`;
-});
