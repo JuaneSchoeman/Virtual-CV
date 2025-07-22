@@ -14,43 +14,41 @@ body {
     position: relative;
 }
 
-/* === Pac-Man === */
-
-
+/* Pac-Man container */
 .pacman {
     position: fixed;
     top: 20px;
-    left: -60px; /* start offscreen left */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: conic-gradient(
-        yellow 20deg,
-        transparent 40deg,
-        yellow 360deg
-    );
-    animation:  pacman-mouth 0.5s infinite linear,
-                pacman-move 8s linear infinite;
+    left: -60px; /* start offscreen */
+    width: 60px;
+    height: 60px;
     z-index: 9999;
+    animation: pacman-move 8s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-@keyframes pacman-mouth {
-    0%, 100% {
-        background: conic-gradient(
-            yellow 20deg,
-            transparent 40deg,
-            yellow 360deg
-        );
-    }
-    50% {
-        background: conic-gradient(
-            yellow 5deg,
-            transparent 70deg,
-            yellow 360deg
-        );
-    }
+/* Pac-Man top half */
+.pacman-top {
+    width: 60px;
+    height: 30px;
+    background: yellow;
+    border-radius: 60px 60px 0 0;
+    animation: mouth-top 0.5s infinite ease-in-out;
+    transform-origin: center bottom;
 }
 
+/* Pac-Man bottom half */
+.pacman-bottom {
+    width: 60px;
+    height: 30px;
+    background: yellow;
+    border-radius: 0 0 60px 60px;
+    animation: mouth-bottom 0.5s infinite ease-in-out;
+    transform-origin: center top;
+}
+
+/* Pac-Man horizontal movement */
 @keyframes pacman-move {
     0% {
         left: -60px;
@@ -60,8 +58,26 @@ body {
     }
 }
 
+/* Mouth opening/closing animations */
+@keyframes mouth-top {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
 
-/* Header styling */
+@keyframes mouth-bottom {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+/* Header spacing */
 .site-header {
     text-align: center;
     margin-top: 60px; 
