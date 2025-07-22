@@ -80,13 +80,13 @@ body {
 /* Dots */
 
 .dots-container {
-    position: absolute;
-    top: 40px; /* same vertical line as Pac-Man */
+    position: fixed;
+    top: 40px;
     left: 0;
     width: 100vw;
     height: 10px;
     pointer-events: none;
-    z-index: 5; /* behind header but above background */
+    z-index: 5;
 }
 
 .dot {
@@ -99,6 +99,7 @@ body {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
 
 
 
