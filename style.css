@@ -77,6 +77,30 @@ body {
     }
 }
 
+/* Dots */
+
+.dots-container {
+    position: fixed;
+    top: 50px; /* vertically aligned with Pac-Man */
+    left: 0;
+    width: 100vw;
+    height: 10px;
+    pointer-events: none; /* so clicks pass through */
+    z-index: 5; /* behind text, but above background */
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
 /* Header spacing */
 .site-header {
     text-align: center;
