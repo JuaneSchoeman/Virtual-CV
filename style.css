@@ -29,12 +29,11 @@ body {
         transparent 40deg,
         yellow 360deg
     );
-    animation: pacman-mouth 0.5s infinite linear,
-               pacman-move 8s linear infinite;
+    animation:  pacman-mouth 0.5s infinite linear,
+                pacman-move 8s linear infinite;
     z-index: 9999;
 }
 
-/* Animate mouth opening and closing */
 @keyframes pacman-mouth {
     0%, 100% {
         background: conic-gradient(
@@ -52,7 +51,6 @@ body {
     }
 }
 
-/* Move pacman left to right */
 @keyframes pacman-move {
     0% {
         left: -60px;
@@ -61,6 +59,7 @@ body {
         left: 110vw;
     }
 }
+
 
 /* Header styling */
 .site-header {
