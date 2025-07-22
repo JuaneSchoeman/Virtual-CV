@@ -19,36 +19,40 @@ body {
 
 .pacman {
     position: fixed;
-    top: 30px;
-    left: -60px; /* smaller start position */
+    top: 20px;
+    left: -60px; /* start offscreen left */
     width: 40px;
-    height: 20px;
+    height: 40px;
+    border-radius: 50%;
+    background: conic-gradient(
+        yellow 20deg,
+        transparent 40deg,
+        yellow 360deg
+    );
+    animation: pacman-mouth 0.5s infinite linear,
+               pacman-move 8s linear infinite;
     z-index: 9999;
-    animation: pacman-move 8s linear infinite;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-/* Smaller Pac-Man top half */
-.pacman-top {
-    background-color: yellow;
-    height: 10px;
-    width: 40px;
-    border-radius: 40px 40px 0 0;
-    animation: spin1 0.4s infinite linear;
+/* Animate mouth opening and closing */
+@keyframes pacman-mouth {
+    0%, 100% {
+        background: conic-gradient(
+            yellow 20deg,
+            transparent 40deg,
+            yellow 360deg
+        );
+    }
+    50% {
+        background: conic-gradient(
+            yellow 5deg,
+            transparent 70deg,
+            yellow 360deg
+        );
+    }
 }
 
-/* Smaller Pac-Man bottom half */
-.pacman-bottom {
-    background-color: yellow;
-    height: 10px;
-    width: 40px;
-    border-radius: 0 0 40px 40px;
-    animation: spin2 0.4s infinite linear;
-}
-
-
+/* Move pacman left to right */
 @keyframes pacman-move {
     0% {
         left: -60px;
@@ -58,35 +62,10 @@ body {
     }
 }
 
-@keyframes spin1 {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(-35deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes spin2 {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(35deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-
 /* Header styling */
 .site-header {
     text-align: center;
-    margin-top: 140px; /* leave room for pacman */
+    margin-top: 60px; 
     margin-bottom: 2rem;
 }
 
