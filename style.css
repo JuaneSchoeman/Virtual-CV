@@ -14,47 +14,57 @@ body {
     position: relative;
 }
 
-/* Pac-Man container */
+/* === Pac-Man and dots styling UPDATED === */
+
+/* Smaller Pac-Man container */
 .pacman {
     position: fixed;
     top: 20px;
-    left: 10px;
-    width: 200px;
-    height: 100px;
-    margin: 40px 10px;
+    left: -120px;       /* start offscreen left */
+    width: 100px;
+    height: 50px;
     z-index: 9999;
+    animation: pacman-move 6s linear infinite;
 }
 
-/* Upper half of Pac-Man */
+/* Pac-Man top half */
 .pacman-top {
     background-color: yellow;
-    height: 100px;
-    width: 200px;
-    border-radius: 100px 100px 0 0;
+    height: 50px;
+    width: 100px;
+    border-radius: 50px 50px 0 0;
     animation: spin1 0.5s infinite linear;
 }
 
-/* Lower half of Pac-Man */
+/* Pac-Man bottom half */
 .pacman-bottom {
     background-color: yellow;
-    height: 100px;
-    width: 200px;
-    border-radius: 0 0 100px 100px;
+    height: 50px;
+    width: 100px;
+    border-radius: 0 0 50px 50px;
     animation: spin2 0.5s infinite linear;
 }
 
-/* Dots Pac-Man eats */
+/* Dots container stays fixed */
 .feed {
     position: fixed;
-    margin-top: 0px;
-    margin-left: 220px;
-    width: 45px;
-    height: 45px;
+    top: 45px;          /* vertical center of Pac-Man */
+    left: 100px;        /* fixed position on screen */
+    width: 25px;
+    height: 25px;
     border-radius: 30%;
     animation: eat 1s linear infinite;
 }
 
-/* Animations */
+/* Pac-Man moves horizontally */
+@keyframes pacman-move {
+    0% {
+        left: -120px;
+    }
+    100% {
+        left: 110vw; /* moves completely off right side */
+    }
+}
 
 @keyframes spin1 {
     0% {
@@ -83,25 +93,27 @@ body {
 @keyframes eat {
     0% {
         box-shadow:
-        100px 65px 0 0 white,
-        300px 65px 0 0 white,
-        500px 65px 0 0 white,
-        700px 65px 0 0 white,
-        900px 65px 0 0 white,
-        1100px 65px 0 0 white,
-        1300px 65px 0 0 white;
+        50px 25px 0 0 white,
+        150px 25px 0 0 white,
+        250px 25px 0 0 white,
+        350px 25px 0 0 white,
+        450px 25px 0 0 white,
+        550px 25px 0 0 white,
+        650px 25px 0 0 white;
     }
     100% {
         box-shadow:
-        0px 65px 0 0 white,
-        100px 65px 0 0 white,
-        300px 65px 0 0 white,
-        500px 65px 0 0 white,
-        700px 65px 0 0 white,
-        900px 65px 0 0 white,
-        1100px 65px 0 0 white;
+        0px 25px 0 0 white,
+        50px 25px 0 0 white,
+        150px 25px 0 0 white,
+        250px 25px 0 0 white,
+        350px 25px 0 0 white,
+        450px 25px 0 0 white,
+        550px 25px 0 0 white;
     }
 }
+
+/* === rest of style.css remains unchanged from before === */
 
 /* Header styling */
 .site-header {
