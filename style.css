@@ -14,55 +14,47 @@ body {
     position: relative;
 }
 
-/* === Pac-Man and dots styling UPDATED === */
+/* === Pac-Man === */
 
-/* Smaller Pac-Man container */
+
 .pacman {
     position: fixed;
-    top: 20px;
-    left: -120px;       /* start offscreen left */
-    width: 100px;
-    height: 50px;
+    top: 30px;
+    left: -60px; /* smaller start position */
+    width: 40px;
+    height: 20px;
     z-index: 9999;
-    animation: pacman-move 6s linear infinite;
+    animation: pacman-move 8s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Pac-Man top half */
+/* Smaller Pac-Man top half */
 .pacman-top {
     background-color: yellow;
-    height: 50px;
-    width: 100px;
-    border-radius: 50px 50px 0 0;
-    animation: spin1 0.5s infinite linear;
+    height: 10px;
+    width: 40px;
+    border-radius: 40px 40px 0 0;
+    animation: spin1 0.4s infinite linear;
 }
 
-/* Pac-Man bottom half */
+/* Smaller Pac-Man bottom half */
 .pacman-bottom {
     background-color: yellow;
-    height: 50px;
-    width: 100px;
-    border-radius: 0 0 50px 50px;
-    animation: spin2 0.5s infinite linear;
+    height: 10px;
+    width: 40px;
+    border-radius: 0 0 40px 40px;
+    animation: spin2 0.4s infinite linear;
 }
 
-/* Dots container stays fixed */
-.feed {
-    position: fixed;
-    top: 45px;          /* vertical center of Pac-Man */
-    left: 100px;        /* fixed position on screen */
-    width: 25px;
-    height: 25px;
-    border-radius: 30%;
-    animation: eat 1s linear infinite;
-}
 
-/* Pac-Man moves horizontally */
 @keyframes pacman-move {
     0% {
-        left: -120px;
+        left: -60px;
     }
     100% {
-        left: 110vw; /* moves completely off right side */
+        left: 110vw;
     }
 }
 
@@ -90,30 +82,6 @@ body {
     }
 }
 
-@keyframes eat {
-    0% {
-        box-shadow:
-        50px 25px 0 0 white,
-        150px 25px 0 0 white,
-        250px 25px 0 0 white,
-        350px 25px 0 0 white,
-        450px 25px 0 0 white,
-        550px 25px 0 0 white,
-        650px 25px 0 0 white;
-    }
-    100% {
-        box-shadow:
-        0px 25px 0 0 white,
-        50px 25px 0 0 white,
-        150px 25px 0 0 white,
-        250px 25px 0 0 white,
-        350px 25px 0 0 white,
-        450px 25px 0 0 white,
-        550px 25px 0 0 white;
-    }
-}
-
-/* === rest of style.css remains unchanged from before === */
 
 /* Header styling */
 .site-header {
