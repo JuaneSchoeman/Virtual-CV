@@ -23,41 +23,41 @@ body {
 #pacman {
     position: fixed;
     top: 1rem;
-    left: -50px;
+    left: -60px;
     width: 50px;
     height: 50px;
     background: var(--accent1);
     border-radius: 50%;
     z-index: 100;
-    animation:
-        pac-slide 5s linear infinite,
-        pac-chomp 0.25s ease-in-out infinite;
-    clip-path: polygon(
-        50% 50%, 100% 10%, 100% 90%
-    );
+    animation: pac-slide 6s linear infinite;
+    overflow: hidden;
 }
 
+#pacman::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--bg); /* black mouth */
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+    animation: pac-chomp 0.3s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+
 @keyframes pac-chomp {
-    0%, 100% {
-        clip-path: polygon(
-        50% 50%, 100% 10%, 100% 90%
-        ); /* Mouth open */
-    }
-    50% {
-        clip-path: polygon(
-        50% 50%, 100% 49%, 100% 51%
-        ); /* Mouth closed (nearly a circle) */
-    }
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(20deg); }
+    50%  { transform: rotate(0deg); }
+    75%  { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes pac-slide {
-    0% {
-        transform: translateX(-60px);
-    }
-    100% {
-        transform: translateX(110vw);
-    }
+    0%   { transform: translateX(-60px); }
+    100% { transform: translateX(110vw); }
 }
+
 
 /* Header */
 .site-header {
