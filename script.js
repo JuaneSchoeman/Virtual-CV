@@ -84,28 +84,29 @@ loadResume();
 
 // Pac-Man dot eating animation
 
-const pacman = document.querySelector('.pacman');
-const dots = document.querySelectorAll('.dot');
+window.addEventListener('DOMContentLoaded', () => {
+    const pacman = document.querySelector('.pacman');
+    const dots = document.querySelectorAll('.dot');
 
-function checkDots() {
-    const pacmanRect = pacman.getBoundingClientRect();
+    function checkDots() {
+        const pacmanRect = pacman.getBoundingClientRect();
 
-    dots.forEach(dot => {
+        dots.forEach(dot => {
         const dotRect = dot.getBoundingClientRect();
 
         if (pacmanRect.left > window.innerWidth) {
-        // Pac-Man went off screen, reset dots opacity
-        dot.style.opacity = '1';
+            dot.style.opacity = '1';
         } else if (pacmanRect.right > dotRect.left + 5 && dot.style.opacity !== '0') {
-        dot.style.opacity = '0';
+            dot.style.opacity = '0';
         }
-    });
-}
+        });
+    }
 
-function animate() {
-    checkDots();
-    requestAnimationFrame(animate);
-}
+    function animate() {
+        checkDots();
+        requestAnimationFrame(animate);
+    }
 
-animate();
+    animate();
+});
 

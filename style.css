@@ -16,7 +16,7 @@ body {
 
 /* Pac-Man container */
 .pacman {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: -60px; /* start offscreen */
     width: 40px;
@@ -81,12 +81,12 @@ body {
 
 .dots-container {
     position: fixed;
-    top: 50px; /* vertically aligned with Pac-Man */
+    top: 50px; /* same vertical line as Pac-Man */
     left: 0;
     width: 100vw;
     height: 10px;
-    pointer-events: none; /* so clicks pass through */
-    z-index: 5; /* behind text, but above background */
+    pointer-events: none;
+    z-index: 5; /* behind header but above background */
 }
 
 .dot {
@@ -99,6 +99,7 @@ body {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
 
 
 /* Header spacing */
