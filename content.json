@@ -1,17 +1,17 @@
 {
-    "name": "Your Name",
-    "title": "Arcade Developer",
+    "name": "Juané Schoeman",
+    "title": "Undergraduate IT Student",
     "contact": {
-        "email": "you@example.com",
-        "linkedin": "your-linkedin",
-        "github": "your-github"
+        "email": "juaneschoeman0@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/juan%C3%A9-schoeman-607a11254/",
+        "github": "https://github.com/JuaneSchoeman"
     },
     "sections": [
         {
             "heading": "About Me",
             "items": [
                 {
-                    "text": "I am a passionate arcade game developer with a love for retro aesthetics and creative gameplay. I enjoy building engaging experiences using Unity and modern web technologies."
+                    "text": "Detail-oriented and adaptable IT student with strong skills in Java, C#, and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic, supported by prior experience in healthcare and volunteering. Eager to apply my back-end and database knowledge to real-world software solutions."
                 }
             ]
         },
@@ -19,13 +19,33 @@
             "heading": "Experience",
             "items": [
                 {
-                "role": "Game Developer",
-                "company": "Retro Studios",
-                "dates": "2020–Present",
-                "details": [
-                    "Designed arcade-style levels in Unity",
-                    "Optimized sprite rendering for 60fps"
-                ]
+                    "role": "Software Development Intern",
+                    "company": "DankoSpark, Potchefstroom",
+                    "dates": "Jun 2024 - Jul 2024",
+                    "details": [
+                        "Assisted in developing a website feature using Angular, organized business data in Excel, and participated in daily team meetings.",
+                        "Gained exposure to real-world development workflows and agile collaboration."
+                    ]
+                },
+
+                {
+                    "role": "Student Assistant",
+                    "company": "North-West University, Potchefstroom",
+                    "dates": "Feb 2024 - Jun 2024",
+                    "details": [
+                        "Marked practical assignments, assisted students with their practical work, and supervised tests during the Introduction to Programming course.",
+                        "Gained experience in assessment, student support, and exam supervision within an educational setting."
+                    ]
+                },
+
+                {
+                    "role": "Pharmacy Student",
+                    "company": "Medclinic, Potchefstroom",
+                    "dates": "Aug 2022 - Oct 2022",
+                    "details": [
+                        "Filled prescriptions and restocked medications as part of a practical pharmacy project.",
+                        "Gained experience working with precision and following strict procedures in a regulated healthcare environment."
+                    ]
                 }
             ]
         },
@@ -33,19 +53,49 @@
             "heading": "Education",
             "items": [
                 {
-                "degree": "B.Sc. Game Design",
-                "school": "University XYZ",
-                "dates": "2016–2020"
+                    "degree": "B.Sc. Information Technology",
+                    "school": "North-West University",
+                    "dates": "2023-Present"
                 }
             ]
         },
         {
             "heading": "Skills",
             "items": [
-                { "skill": "C#",       "level": 90 },
-                { "skill": "Unity",    "level": 85 },
-                { "skill": "JavaScript","level": 80 },
-                { "skill": "HTML & CSS","level": 95 }
+                {
+                    "skill": "C#",
+                    "level": 85
+                },
+                {
+                    "skill": "Communication",
+                    "level": 85
+                },
+                {
+                    "skill": "SQL",
+                    "level": 80
+                },
+                {
+                    "skill": "Problem Solving",
+                    "level": 90
+                },
+                {
+                    "skill": "Team collaboration",
+                    "level": 85
+                }
+            ]
+        },
+        {
+            "heading": "Volunteering",
+            "items": [
+                {
+                    "role": "Fundraiser Volunteer",
+                    "company": "Abraham Kriel Potchefstroom",
+                    "dates": "2021–2024 (Each December)",
+                    "details": [
+                        "Assisted customers by answering questions and selling toys at a stall during the annual Liggiefees event, providing friendly and helpful service to visitors.",
+                        "Gained valuable experience in customer service, communication, and sales in a busy event environment."
+                    ]
+                }
             ]
         }
     ]
