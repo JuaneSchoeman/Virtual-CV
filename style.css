@@ -87,7 +87,7 @@ body {
     height: 40px;
     z-index: 9998;
     animation: blinky-move 8s linear infinite;
-    animation-delay: 0.8s; /* stays behind Pac-Man */
+    animation-delay: 0.9s; /* stays behind Pac-Man */
 }
 
 
@@ -128,33 +128,38 @@ body {
 }
 
 /* Eyes */
-.eye {
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
+/* Ghost eyes container */
+.blinky-eyes {
     position: absolute;
     top: 8px;
+    left: 6px;
+    width: 28px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.left-eye {
-    left: 8px;
+/* Each eyeball */
+.blinky-eye {
+    width: 12px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
 }
 
-.right-eye {
-    right: 8px;
-}
-
-.eye::after {
-    content: '';
-    width: 5px;
-    height: 5px;
-    background: blue;
+/* Pupil */
+.blinky-pupil {
+    width: 6px;
+    height: 6px;
+    background: #0000ff;
     border-radius: 50%;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 6px; /* Adjust for direction */
+    left: 6px;
 }
+
 
 /* Blinky movement (slightly behind Pac-Man) */
 @keyframes blinky-move {
