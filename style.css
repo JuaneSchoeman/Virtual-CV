@@ -111,7 +111,7 @@ body {
 #name {
     font-size: 2rem;
     color: yellow;
-    text-shadow: 2px 2px 0 cyan, -2px -2px 0 magenta;
+    text-shadow: 1.5px 1.5px 0 cyan, -1.5px -1.5px 0 magenta;
 }
 
 #title {
@@ -153,7 +153,7 @@ body {
 
 .section h3 {
     font-size: 0.9rem;
-    color: white;
+    color: yellow;
     margin-top: 0.75rem;
 }
 
@@ -162,6 +162,27 @@ body {
     color: cyan;
     margin-bottom: 0.5rem;
 }
+
+.section ul {
+    margin-top: 0.5rem;
+    margin-left: 1.2rem;  /* indent */
+    padding-left: 0;
+}
+
+.section li {
+    font-size: 0.8rem;
+    color: #ddd;          /* softer white */
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+}
+
+.section p {
+    font-size: 0.8rem;
+    color: #ddd;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
 
 /* Skill bars */
 .skill-bar {
