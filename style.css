@@ -78,6 +78,96 @@ body {
     }
 }
 
+/* Blinky (Red Ghost) */
+.blinky {
+    position: absolute;
+    top: 10px;
+    left: -120px;
+    width: 40px;
+    height: 40px;
+    z-index: 9998;
+    animation: blinky-move 8s linear infinite;
+    animation-delay: 0.8s; /* stays behind Pac-Man */
+}
+
+
+/* Ghost body */
+.blinky-body {
+    width: 40px;
+    height: 30px;
+    background: red;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
+/* Wavy feet */
+.blinky-feet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 12px;
+    transform: scaleY(-1);
+}
+
+.blinky-feet path {
+    animation: wave-motion 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes wave-motion {
+    0% {
+        d: path(
+        "M0 6 Q2.5 12 5 6 Q7.5 0 10 6 Q12.5 12 15 6 Q17.5 0 20 6 Q22.5 12 25 6 Q27.5 0 30 6 Q32.5 12 35 6 Q37.5 0 40 6 V12 H0 Z"
+        );
+    }
+    100% {
+        d: path(
+        "M0 0 Q2.5 8 5 2 Q7.5 0 10 2 Q12.5 8 15 2 Q17.5 0 20 2 Q22.5 8 25 2 Q27.5 0 30 2 Q32.5 8 35 2 Q37.5 0 40 6 V12 H0 Z"
+        );
+    }
+}
+
+/* Eyes */
+.eye {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+}
+
+.left-eye {
+    left: 8px;
+}
+
+.right-eye {
+    right: 8px;
+}
+
+.eye::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+/* Blinky movement (slightly behind Pac-Man) */
+@keyframes blinky-move {
+    0% {
+        left: -120px;
+    }
+    100% {
+        left: 117vw;
+    }
+}
+
+
+
 /* Dots */
 
 .dots-container {
@@ -100,6 +190,7 @@ body {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
 
 /* Header spacing */
 .site-header {
@@ -213,3 +304,5 @@ body {
 [data-aos] {
     opacity: 1 !important;
 }
+
+
