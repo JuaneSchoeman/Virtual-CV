@@ -2,7 +2,7 @@
     "name": "Juané Schoeman",
     "title": "Undergraduate IT Student",
     "contact": {
-        "email": "juaneschoeman0@gmail.com",
+        "Email": "juaneschoeman0@gmail.com",
         "linkedin": "https://www.linkedin.com/in/juan%C3%A9-schoeman-607a11254/",
         "github": "https://github.com/JuaneSchoeman"
     },
@@ -11,7 +11,7 @@
             "heading": "About Me",
             "items": [
                 {
-                    "text": "Detail-oriented and adaptable IT student with strong skills in Java, C#, and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic, supported by prior experience in healthcare and volunteering. Eager to apply my back-end and database knowledge to real-world software solutions."
+                    "text": "Detail-oriented and adaptable IT student with strong skills in Java, C#(.NET), and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic, supported by prior experience in healthcare and volunteering. Eager to apply my back-end and database knowledge to real-world software solutions."
                 }
             ]
         },
@@ -40,7 +40,7 @@
 
                 {
                     "role": "Pharmacy Student",
-                    "company": "Medclinic, Potchefstroom",
+                    "company": "Mediclinic, Potchefstroom",
                     "dates": "Aug 2022 - Oct 2022",
                     "details": [
                         "Filled prescriptions and restocked medications as part of a practical pharmacy project.",
@@ -63,7 +63,7 @@
             "heading": "Skills",
             "items": [
                 {
-                    "skill": "C#",
+                    "skill": "C#(.NET)",
                     "level": 85
                 },
                 {
@@ -89,7 +89,7 @@
             "items": [
                 {
                     "role": "Fundraiser Volunteer",
-                    "company": "Abraham Kriel Potchefstroom",
+                    "company": "Abraham Kriel Youth Centre, Potchefstroom",
                     "dates": "2021–2024 (Each December)",
                     "details": [
                         "Assisted customers by answering questions and selling toys at a stall during the annual Liggiefees event, providing friendly and helpful service to visitors.",

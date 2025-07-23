@@ -11,7 +11,7 @@ async function loadResume() {
         const nav = document.getElementById('contact');
         Object.entries(data.contact).forEach(([k, v]) => {
         const a = document.createElement('a');
-        a.href = k === 'email' ? 'mailto:' + v : 'https://' + v;
+        a.href = k === 'Email' ? 'mailto:' + v : 'https://' + v;
         a.textContent = k;
         nav.appendChild(a);
         });
