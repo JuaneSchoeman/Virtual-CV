@@ -28,8 +28,11 @@ async function loadResume() {
 
         sec.items.forEach((item) => {
             const div = document.createElement('div');
-
-            if (item.role) {
+            
+            if (item.text) {
+                div.innerHTML = `<p>${item.text}</p>`;
+            }
+            else if (item.role) {
             div.innerHTML = `
                 <h3>${item.role} @ ${item.company}</h3>
                 <span class="dates">${item.dates}</span>

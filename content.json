@@ -8,37 +8,45 @@
     },
     "sections": [
         {
-        "heading": "Experience",
-        "items": [
-            {
-            "role": "Game Developer",
-            "company": "Retro Studios",
-            "dates": "2020–Present",
-            "details": [
-                "Designed arcade-style levels in Unity",
-                "Optimized sprite rendering for 60fps"
+            "heading": "About Me",
+            "items": [
+                {
+                    "text": "I am a passionate arcade game developer with a love for retro aesthetics and creative gameplay. I enjoy building engaging experiences using Unity and modern web technologies."
+                }
             ]
-            }
-        ]
         },
         {
-        "heading": "Education",
-        "items": [
-            {
-            "degree": "B.Sc. Game Design",
-            "school": "University XYZ",
-            "dates": "2016–2020"
-            }
-        ]
+            "heading": "Experience",
+            "items": [
+                {
+                "role": "Game Developer",
+                "company": "Retro Studios",
+                "dates": "2020–Present",
+                "details": [
+                    "Designed arcade-style levels in Unity",
+                    "Optimized sprite rendering for 60fps"
+                ]
+                }
+            ]
         },
         {
-        "heading": "Skills",
-        "items": [
-            { "skill": "C#",       "level": 90 },
-            { "skill": "Unity",    "level": 85 },
-            { "skill": "JavaScript","level": 80 },
-            { "skill": "HTML & CSS","level": 95 }
-        ]
+            "heading": "Education",
+            "items": [
+                {
+                "degree": "B.Sc. Game Design",
+                "school": "University XYZ",
+                "dates": "2016–2020"
+                }
+            ]
+        },
+        {
+            "heading": "Skills",
+            "items": [
+                { "skill": "C#",       "level": 90 },
+                { "skill": "Unity",    "level": 85 },
+                { "skill": "JavaScript","level": 80 },
+                { "skill": "HTML & CSS","level": 95 }
+            ]
         }
     ]
 }
