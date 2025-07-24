@@ -123,66 +123,10 @@ window.addEventListener('DOMContentLoaded', () => {
             dot.style.opacity = '0'; // Fade out dots when eaten
         }
         });
-
-        // ----------- Footer dots ------------
-
-    const footerDotsContainer = document.querySelector('.footer-dots');
-
-    function createFooterDots() {
-        footerDotsContainer.innerHTML = ''; // Clear existing footer dots
-
-        const spacing = 50; // px between footer dots
-        const totalDots = Math.floor(window.innerWidth / spacing);
-
-        for (let i = 0; i <= totalDots; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('footer-dot');
-            dot.style.left = `${i * spacing}px`;
-            footerDotsContainer.appendChild(dot);
-        }
     }
-
-    createFooterDots();
-    window.addEventListener('resize', createFooterDots);
-
-    const footerPacman = document.querySelector('.footer-pacman');
-
-    function checkFooterDots() {
-    console.log('checkFooterDots called');
-
-    function checkFooterDots() {
-        const pacmanFootRect = footerPacman.getBoundingClientRect();
-        const footerDots = document.querySelectorAll('.footer-dot');
-
-        // Reset dots when footer Pac-Man has fully left screen on left
-        if (pacmanFootRect.right < 0) {
-            footerDots.forEach(dot => {
-                dot.style.opacity = '1';
-            });
-            return;
-        }
-
-        footerDots.forEach(dot => {
-            const dotRect = dot.getBoundingClientRect();
-
-            // Fade out dots when footer Pac-Man overlaps
-            if (
-                pacmanFootRect.left < dotRect.right &&
-                pacmanFootRect.right > dotRect.left &&
-                dot.style.opacity !== '0'
-            ) {
-                dot.style.opacity = '0';
-            }
-
-        });
-    }
-    }
-    }
-    
 
     function animate() {
         checkDots();
-        checkFooterDots();
         requestAnimationFrame(animate);
     }
 
