@@ -9,44 +9,29 @@ async function loadResume() {
         document.getElementById('title').textContent = data.title;
 
         const nav = document.getElementById('contact');
-
-        const fruitIcons = [
-            "img/cherry.png",
-            "img/strawberry.png",
-            "img/orange.png",
-            "img/melon.png"
+        const fruits = [
+            'img/cherry.png',
+            'img/orange.png',
+            'img/strawberry.png',
         ];
-        let index = 0;
 
-        const contactEntries = Object.entries(data.contact);
+const links = Object.entries(data.contact);
 
-        // Add a fruit at the start
-        const firstFruit = document.createElement('img');
-        firstFruit.src = fruitIcons[index % fruitIcons.length];
-        firstFruit.style.width = "25px";
-        firstFruit.style.height = "25px";
-        firstFruit.style.margin = "0 0.2 rem";
-        firstFruit.style.verticalAlign = "middle";
-        nav.appendChild(firstFruit);
-        index++;
+links.forEach(([key, val], i) => {
+    const fruitImg = document.createElement('img');
+    fruitImg.src = fruits[i % fruits.length];
+    fruitImg.alt = 'fruit';
+    fruitImg.classList.add('fruit-img');
 
-        contactEntries.forEach(([k, v], i) => {
-            // Add the link
-            const a = document.createElement('a');
-            a.href = k === 'Email' ? 'mailto:' + v : 'https://' + v;
-            a.textContent = k;
-            nav.appendChild(a);
+    nav.appendChild(fruitImg);
 
-            // Add a fruit after every link
-            const fruit = document.createElement('img');
-            fruit.src = fruitIcons[index % fruitIcons.length];
-            fruit.style.width = "25px";
-            fruit.style.height = "25px";
-            fruit.style.margin = "0 0.2 rem";
-            fruit.style.verticalAlign = "middle";
-            nav.appendChild(fruit);
-            index++;
-        });
+    // Insert the link
+    const a = document.createElement('a');
+    a.href = key === 'Email' ? 'mailto:' + val : 'https://' + val;
+    a.textContent = key;
+    nav.appendChild(a);
+});
+
 
 
         // Render sections with Animate.css effects and AOS attributes

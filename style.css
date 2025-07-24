@@ -18,6 +18,14 @@ main {
     padding-bottom:  40px;
 }
 
+.fruit-img {
+    position: relative;
+    top: -1px;     
+    vertical-align: middle;
+    width: 25px;       
+    height: 25px;
+}
+
 /* Pac-Man container */
 .pacman {
     position: absolute;
