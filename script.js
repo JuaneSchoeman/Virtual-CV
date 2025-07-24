@@ -9,12 +9,45 @@ async function loadResume() {
         document.getElementById('title').textContent = data.title;
 
         const nav = document.getElementById('contact');
-        Object.entries(data.contact).forEach(([k, v]) => {
-        const a = document.createElement('a');
-        a.href = k === 'Email' ? 'mailto:' + v : 'https://' + v;
-        a.textContent = k;
-        nav.appendChild(a);
+
+        const fruitIcons = [
+            "img/cherry.png",
+            "img/strawberry.png",
+            "img/orange.png",
+            "img/melon.png"
+        ];
+        let index = 0;
+
+        const contactEntries = Object.entries(data.contact);
+
+        // Add a fruit at the start
+        const firstFruit = document.createElement('img');
+        firstFruit.src = fruitIcons[index % fruitIcons.length];
+        firstFruit.style.width = "25px";
+        firstFruit.style.height = "25px";
+        firstFruit.style.margin = "0 0.2 rem";
+        firstFruit.style.verticalAlign = "middle";
+        nav.appendChild(firstFruit);
+        index++;
+
+        contactEntries.forEach(([k, v], i) => {
+            // Add the link
+            const a = document.createElement('a');
+            a.href = k === 'Email' ? 'mailto:' + v : 'https://' + v;
+            a.textContent = k;
+            nav.appendChild(a);
+
+            // Add a fruit after every link
+            const fruit = document.createElement('img');
+            fruit.src = fruitIcons[index % fruitIcons.length];
+            fruit.style.width = "25px";
+            fruit.style.height = "25px";
+            fruit.style.margin = "0 0.2 rem";
+            fruit.style.verticalAlign = "middle";
+            nav.appendChild(fruit);
+            index++;
         });
+
 
         // Render sections with Animate.css effects and AOS attributes
         const main = document.getElementById('content');

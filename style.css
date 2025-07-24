@@ -21,162 +21,53 @@ main {
 /* Pac-Man container */
 .pacman {
     position: absolute;
-    top: 10px;
-    left: -60px; /* start offscreen */
-    width: 40px;
-    height: 40px;
+    top: 6px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
     z-index: 9999;
-    animation: pacman-move 8s linear infinite;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-image: url('img/pacman-sprite-2frames-header.png');
+    background-repeat: no-repeat;
+    animation: pacman-move 8s linear infinite, chomping 0.5s steps(2) infinite;
 }
 
-/* Pac-Man top half */
-.pacman-top {
-    width: 40px;
-    height: 20px;
-    background: yellow;
-    border-radius: 40px 40px 0 0;
-    animation: mouth-top 0.5s infinite ease-in-out;
-    transform-origin: center bottom;
-}
-
-/* Pac-Man bottom half */
-.pacman-bottom {
-    width: 40px;
-    height: 20px;
-    background: yellow;
-    border-radius: 0 0 40px 40px;
-    animation: mouth-bottom 0.5s infinite ease-in-out;
-    transform-origin: center top;
-}
-
-/* Pac-Man horizontal movement */
+/* Movement animation */
 @keyframes pacman-move {
-    0% {
-        left: -60px;
-    }
-    100% {
-        left: 110vw;
-    }
+    0% { left: -60px; }
+    100% { left: 110vw; }
 }
 
-/* Mouth opening/closing animations */
-@keyframes mouth-top {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(-30deg);
-    }
-}
-
-@keyframes mouth-bottom {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(30deg);
-    }
+/* Chomping animation */
+@keyframes chomping {
+    from { background-position: 0 0; }
+    to { background-position: -100px 0; } /* 2 frames × 50px */
 }
 
 /* Blinky (Red Ghost) */
 .blinky {
     position: absolute;
-    top: 10px;
+    top: 6px;
     left: -120px;
-    width: 40px;
-    height: 40px;
-    z-index: 9998;
-    animation: blinky-move 8s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/blinky-sprite-2frames-header.png');
+    background-repeat: no-repeat;
+    animation: blinky-move 8s linear infinite, blinky-walk 0.5s steps(2) infinite;
     animation-delay: 0.9s; /* stays behind Pac-Man */
+    z-index: 9998;
 }
 
-
-/* Ghost body */
-.blinky-body {
-    width: 40px;
-    height: 30px;
-    background: red;
-    border-radius: 20px 20px 0 0;
-    position: relative;
-}
-
-/* Wavy feet */
-.blinky-feet {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 12px;
-    transform: scaleY(-1);
-}
-
-.blinky-feet path {
-    animation: wave-motion 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes wave-motion {
-    0% {
-        d: path(
-        "M0 6 Q2.5 12 5 6 Q7.5 0 10 6 Q12.5 12 15 6 Q17.5 0 20 6 Q22.5 12 25 6 Q27.5 0 30 6 Q32.5 12 35 6 Q37.5 0 40 6 V12 H0 Z"
-        );
-    }
-    100% {
-        d: path(
-        "M0 0 Q2.5 8 5 2 Q7.5 0 10 2 Q12.5 8 15 2 Q17.5 0 20 2 Q22.5 8 25 2 Q27.5 0 30 2 Q32.5 8 35 2 Q37.5 0 40 6 V12 H0 Z"
-        );
-    }
-}
-
-/* Eyes */
-/* Ghost eyes container */
-.blinky-eyes {
-    position: absolute;
-    top: 8px;
-    left: 6px;
-    width: 28px;
-    height: 16px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Each eyeball */
-.blinky-eye {
-    width: 12px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Pupil */
-.blinky-pupil {
-    width: 6px;
-    height: 6px;
-    background: #0000ff;
-    border-radius: 50%;
-    position: absolute;
-    top: 6px; /* Adjust for direction */
-    left: 6px;
-}
-
-
-/* Blinky movement (slightly behind Pac-Man) */
 @keyframes blinky-move {
-    0% {
-        left: -120px;
-    }
-    100% {
-        left: 117vw;
-    }
+    0% { left: -120px; }
+    100% { left: 117vw; }
+}
+
+@keyframes blinky-walk {
+    from { background-position: 0 0; }
+    to { background-position: -100px 0; }
 }
 
 /* Dots */
-
 .dots-container {
     position: absolute;
     top: 25px;
@@ -192,8 +83,19 @@ main {
     top: 0;
     width: 10px;
     height: 10px;
-    background: white;
-    border-radius: 50%;
+    background-image: url('img/pellet.png');
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.footer-dot {
+    position: absolute;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    background-image: url('img/pellet.png');
+    background-size: cover;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -209,108 +111,59 @@ main {
     pointer-events: none;
 }
 
-/* Dots for bottom row */
-.footer-dots {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 100%;
-    height: 10px;
-    pointer-events: none;
-}
 
-.footer-dot {
-    position: absolute;
-    top: 0;
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    transition: opacity 0.3s ease;
-}
 
-/* Frightened ghost */
 /* Frightened ghost */
 .frightened-ghost {
     position: absolute;
-    top: 0;
+    top: -6px;
     left: -120px;
-    width: 40px;
-    height: 40px;
-    animation: footer-ghost-move 8s linear infinite;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/ghost-sprite-4frames-footer.png');
+    background-repeat: no-repeat;
+    animation: footer-ghost-move 8s linear infinite, ghost-flash 0.6s steps(4) infinite;
     z-index: 2;
 }
 
-.frightened-body {
-    width: 40px;
-    height: 30px;
-    background: #0000e7;
-    border-radius: 20px 20px 0 0;
-    position: relative;
+/* Movement (same as before) */
+@keyframes footer-ghost-move {
+    0% { left: 110vw; }
+    100% { left: -120px; }
 }
 
-/* Feet (wavy) */
-.frightened-feet {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 12px;
-    transform: scaleY(-1);
-}
-.frightened-feet path {
-    animation: wave-motion 0.5s ease-in-out infinite alternate;
-}
-
-/* Eyes (simple white ovals) */
-.frightened-eyes {
-    position: absolute;
-    top: 8px;
-    left: 12px;
-    width: 16px;
-    height: 14px;
-    display: flex;
-    justify-content: space-between;
-}
-.frightened-eye {
-    width: 6px;
-    height: 9px;
-    background: peachpuff;
-    border-radius: 50%;
-}
-
-/* Squiggly mouth */
-.frightened-mouth {
-    position: absolute;
-    bottom: 13px;
-    left: 10px;
-    width: 20px;
-    height: 6px;
+/* Ghost flashing between frames */
+@keyframes ghost-flash {
+    from { background-position: 0 0; }
+    to { background-position: -200px 0; } /* 4 frames × 50px */
 }
 
 /* Footer Pac-Man */
 .footer-pacman {
     position: absolute;
-    top: 0;
+    top: -6px;
     left: -180px;
-    width: 40px;
-    height: 40px;
-    animation: footer-pacman-move 8s linear infinite;
-    animation-delay: 0.9s; /* starts behind the ghost */
+    width: 50px;
+    height: 50px;
+    background-image: url('img/pacman-sprite-2frames-footer.png');
+    background-repeat: no-repeat;
+    animation: footer-pacman-move 8s linear infinite, footer-chomping 0.5s steps(2) infinite;
+    animation-delay: 0.9s; /* stays behind ghost */
     z-index: 1;
-    transform: scaleX(-1); /* face left */
-}
-.footer-pacman .pacman-top,
-.footer-pacman .pacman-bottom {
-    background: yellow;
 }
 
-/* Animations */
+/* Movement animation */
 @keyframes footer-pacman-move {
-    0% { left: 110vw; }   /* Start offscreen on the RIGHT */
-    100% { left: -60px; } /* Exit offscreen on the LEFT */
+    0% { left: 110vw; }
+    100% { left: -60px; }
 }
+
+/* Chomping animation */
+@keyframes footer-chomping {
+    from { background-position: 0 0; }
+    to { background-position: -100px 0; } /* 2 frames × 50px */
+}
+
 
 @keyframes footer-ghost-move {
     0% { left: 110vw; }   /* Start offscreen on the RIGHT */
