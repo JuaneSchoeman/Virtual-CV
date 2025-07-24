@@ -216,6 +216,7 @@ body {
     height: 10px;
     pointer-events: none;
 }
+
 .footer-dot {
     position: absolute;
     top: 0;
@@ -223,8 +224,10 @@ body {
     height: 8px;
     background: white;
     border-radius: 50%;
+    transition: opacity 0.3s ease;
 }
 
+/* Frightened ghost */
 /* Frightened ghost */
 .frightened-ghost {
     position: absolute;
@@ -234,15 +237,17 @@ body {
     height: 40px;
     animation: footer-ghost-move 8s linear infinite;
     z-index: 2;
-    animation-delay: 0s;
 }
+
 .frightened-body {
     width: 40px;
     height: 30px;
-    background: #0000aa;
+    background: #0000e7;
     border-radius: 20px 20px 0 0;
     position: relative;
 }
+
+/* Feet (wavy) */
 .frightened-feet {
     position: absolute;
     bottom: 0;
@@ -251,32 +256,34 @@ body {
     height: 12px;
     transform: scaleY(-1);
 }
+.frightened-feet path {
+    animation: wave-motion 0.5s ease-in-out infinite alternate;
+}
 
-/* Eyes */
+/* Eyes (simple white ovals) */
 .frightened-eyes {
     position: absolute;
     top: 8px;
-    left: 6px;
-    width: 28px;
-    height: 16px;
+    left: 12px;
+    width: 16px;
+    height: 14px;
     display: flex;
     justify-content: space-between;
 }
 .frightened-eye {
-    width: 12px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    position: relative;
-}
-.frightened-pupil {
     width: 6px;
-    height: 6px;
-    background: black;
+    height: 9px;
+    background: peachpuff;
     border-radius: 50%;
+}
+
+/* Squiggly mouth */
+.frightened-mouth {
     position: absolute;
-    top: 6px;
-    left: 3px;
+    bottom: 13px;
+    left: 10px;
+    width: 20px;
+    height: 6px;
 }
 
 /* Footer Pac-Man */
@@ -287,7 +294,7 @@ body {
     width: 40px;
     height: 40px;
     animation: footer-pacman-move 8s linear infinite;
-    animation-delay: 0.5s; /* starts behind the ghost */
+    animation-delay: 0.9s; /* starts behind the ghost */
     z-index: 1;
     transform: scaleX(-1); /* face left */
 }

@@ -132,3 +132,49 @@ window.addEventListener('DOMContentLoaded', () => {
 
     animate();
 });
+
+// Footer Pac-Man dot eating animation
+window.addEventListener('DOMContentLoaded', () => {
+    const footerDotsContainer = document.querySelector('.footer-dots');
+    const footerPacman = document.querySelector('.footer-pacman');
+
+    function createFooterDots() {
+        footerDotsContainer.innerHTML = ''; // Clear old dots
+        const spacing = 50; // distance between dots
+        const totalDots = Math.floor(window.innerWidth / spacing);
+
+        for (let i = 0; i <= totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('footer-dot');
+            dot.style.left = `${i * spacing}px`;
+            footerDotsContainer.appendChild(dot);
+        }
+    }
+
+    createFooterDots();
+    window.addEventListener('resize', createFooterDots);
+
+    function checkFooterDots() {
+        const pacRect = footerPacman.getBoundingClientRect();
+        const dots = document.querySelectorAll('.footer-dot');
+
+        dots.forEach(dot => {
+            const dotRect = dot.getBoundingClientRect();
+            if (pacRect.left < dotRect.right && pacRect.right > dotRect.left && dot.style.opacity !== '0') {
+                dot.style.opacity = '0'; // Hide when Pac-Man "eats" it
+            }
+            // Reset when Pac-Man leaves screen
+            if (pacRect.right < 0 || pacRect.left > window.innerWidth) {
+                dot.style.opacity = '1';
+            }
+        });
+    }
+
+    function footerAnimate() {
+        checkFooterDots();
+        requestAnimationFrame(footerAnimate);
+    }
+
+    footerAnimate();
+});
+
