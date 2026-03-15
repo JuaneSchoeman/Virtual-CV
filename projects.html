@@ -199,7 +199,8 @@
   fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
     .then(res => { if(!res.ok) throw new Error(res.status); return res.json(); })
     .then(repos => {
-      allRepos = repos.filter(r => !r.fork).sort((a,b) => new Date(b.updated_at)-new Date(a.updated_at));
+      allRepos = repos
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
       // Build language filter buttons
       const languages = [...new Set(allRepos.map(r => r.language).filter(Boolean))].sort();

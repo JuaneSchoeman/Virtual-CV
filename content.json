@@ -42,6 +42,16 @@
   ],
   "experience": [
     {
+      "date": "Feb 2026 — Present",
+      "company": "North-West University · Potchefstroom",
+      "role": "Student Assistant For Python Programming",
+      "description": [
+        "Marked practical assignments for the Introduction to Programming course.",
+        "Assisted students with practical work and provided one-on-one academic support.",
+        "Supervised tests and gained experience in assessment and exam invigilation."
+      ]
+    },
+    {
       "date": "Jun 2024 — Jul 2024",
       "company": "DankoSpark · Potchefstroom",
       "role": "Software Development Intern",
@@ -54,7 +64,7 @@
     {
       "date": "Feb 2024 — Jun 2024",
       "company": "North-West University · Potchefstroom",
-      "role": "Student Assistant",
+      "role": "Student Assistant For Python Programming",
       "description": [
         "Marked practical assignments for the Introduction to Programming course.",
         "Assisted students with practical work and provided one-on-one academic support.",
@@ -85,7 +95,7 @@
   ],
   "volunteering": [
     {
-      "date": "2021 — 2024 (Each December)",
+      "date": "2021 — 2025 (Each December)",
       "organisation": "Abraham Kriel Youth Centre · Potchefstroom",
       "role": "Fundraiser Volunteer",
       "description": [

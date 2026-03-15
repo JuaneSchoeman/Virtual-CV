@@ -30,6 +30,7 @@ function renderAll(data) {
   renderExperience(data.experience);
   fetchGitHubProjects(data.github_username);
   renderEducation(data.education);
+  renderVolunteering(data.volunteering);
   renderContact(data.contact);
 }
 
@@ -108,9 +109,8 @@ function fetchGitHubProjects(username) {
       return res.json();
     })
     .then(repos => {
-      // Filter out forked repos and sort by most recently updated
+      // Sort by most recently updated (include forks so forked projects like Arcademia show)
       const ownRepos = repos
-        .filter(r => !r.fork)
         .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
       if (ownRepos.length === 0) {
@@ -195,6 +195,25 @@ function renderEducation(education) {
       <p class="edu-year">${edu.year}</p>
       <h3 class="edu-degree">${edu.degree}</h3>
       <p class="edu-school">${edu.institution}</p>
+    </div>
+  `).join('');
+}
+
+function renderVolunteering(volunteering) {
+  const container = document.getElementById('vol-list');
+  if (!container || !volunteering) return;
+  container.innerHTML = volunteering.map(v => `
+    <div class="exp-item">
+      <div>
+        <p class="exp-date">${v.date}</p>
+        <p class="exp-company">${v.organisation}</p>
+      </div>
+      <div>
+        <h3 class="exp-role">${v.role}</h3>
+        <ul class="exp-desc">
+          ${v.description.map(d => `<li>${d}</li>`).join('')}
+        </ul>
+      </div>
     </div>
   `).join('');
 }
