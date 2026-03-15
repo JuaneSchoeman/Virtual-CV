@@ -1,69 +1,137 @@
-# Virtual-CV
+# ✦ Juané Schoeman — Virtual CV
 
-An animated, Pac‑Man‑themed **interactive CV** built with **HTML, CSS, and JavaScript**.  
+A personal portfolio and interactive CV built with vanilla HTML, CSS, and JavaScript. Features a galaxy/nebula theme with animated stars, shooting stars, glowing cards, magnetic buttons, and smooth scroll transitions. All content is driven from a single `content.json` file — no frameworks, no build tools, no dependencies.
 
-It features:
-- A **scrolling resume** populated from `content.json`.
-- **Animated Pac‑Man and ghosts** chasing across the screen.
-- **Dots** that Pac‑Man “eats” along the top and in the footer.
-- **Responsive layout** and retro arcade style using the "Press Start 2P" font.
+ **Live site:** [juaneschoeman.github.io/Virtual-CV](https://juaneschoeman.github.io/Virtual-CV/)
 
 ---
 
-## Demo
+## Features
 
-Open `index.html` in any browser to view the CV.
+- **Galaxy/nebula background** — animated canvas with 320 twinkling stars, coloured nebula clouds, and shooting stars
+- **Custom cursor** — glowing purple dot with a smooth trailing ring
+- **Typewriter effect** — cycles through role titles in the hero section
+- **Magnetic buttons** — CTA and contact buttons subtly follow the cursor
+- **Card shimmer & glow** — hover effects on all skill, project, and education cards
+- **Smooth section transitions** — sections fade and rise into view on scroll
+- **Fully data-driven** — all personal info lives in `content.json`, no HTML editing needed
+- **Responsive** — mobile-friendly layout
+- **Zero dependencies** — no frameworks, no npm, no build step
 
 ---
 
 ## Project Structure
 
-project/  
-│  
-├── index.html       # Main HTML file  
-├── style.css        # Styling for layout, animations, and theme  
-├── script.js        # JS for rendering sections and animations  
-├── content.json     # Resume data (name, sections, contact info)  
-└── README.md        # Project documentation  
+```
+Virtual-CV/
+│
+├── index.html       # HTML structure (no inline CSS or JS)
+├── style.css        # Galaxy theme — all styles and animations
+├── script.js        # All logic: content rendering, effects, interactions
+├── content.json     # Your personal data — edit this to update the site
+└── README.md        # You are here
+```
 
 ---
 
-## How It Works
+## Getting Started
 
-1. **Resume Content**  
-   - All personal info, experience, and skills are stored in `content.json`.  
-   - `script.js` dynamically loads this content into `index.html`.  
+**To view locally:**
+1. Clone or download the repository
+2. Open `index.html` in any modern browser — no server needed
 
-2. **Animations**  
-   - Pac‑Man and ghosts are animated using CSS keyframes.  
-   - Dots are created dynamically with JavaScript and disappear when eaten by Pac‑Man.  
+```bash
+git clone https://github.com/JuaneSchoeman/Virtual-CV.git
+cd Virtual-CV
+open index.html
+```
 
-3. **Styling**  
-   - Uses **Google Fonts** (`Press Start 2P`) for a retro look.  
-   - **AOS (Animate On Scroll)** library for animated section reveals.  
-
----
-
-## Setup & Usage
-
-1. **Download or clone** the repository.  
-2. Open `index.html` in a browser (no server needed).  
-3. To customize the resume:  
-   - Edit `content.json` with your own info.  
-   - Adjust colors or animations in `style.css`.  
+> **Note:** Because `script.js` fetches `content.json` via `fetch()`, you may need to run a simple local server if your browser blocks local file requests. You can use VS Code's **Live Server** extension, or run:
+> ```bash
+> npx serve .
+> ```
 
 ---
 
-## Links & Credits
+## How to Customise
 
-- **Fonts:** [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)  
-- **Animations:** [Animate.css](https://animate.style/) & [AOS](https://michalsnik.github.io/aos/)  
-- **Pac‑Man & Ghost Design:** Inspired by the original **Namco Pac‑Man** arcade game.  
+All personal content lives in **`content.json`**. Open it and update the fields — the site rebuilds automatically.
+
+### Key fields to update:
+
+```json
+{
+  "name": "Your Name",
+  "bio": "A short paragraph about yourself.",
+  "contact": {
+    "email": "you@example.com",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourprofile"
+  }
+}
+```
+
+### Adding a new project:
+```json
+{
+  "number": "003",
+  "title": "My New Project",
+  "description": "What it does and what you built.",
+  "stack": ["React", "Node.js", "PostgreSQL"],
+  "github": "https://github.com/you/project",
+  "live": "https://yourproject.com"
+}
+```
+
+### Adding work experience:
+```json
+{
+  "date": "Jan 2024 — Present",
+  "company": "Company Name",
+  "role": "Junior Developer",
+  "description": [
+    "What you built or contributed to.",
+    "Technologies you used.",
+    "Any impact or results."
+  ]
+}
+```
 
 ---
 
-## Future Improvements
+## Built With
 
-- Add **mobile optimizations** for smaller screens.  
-- Add **flash effect** to frightened ghosts (like in the real game).  
-- Export as **PDF CV** for easy sharing.  
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure |
+| CSS3 | Styling, animations, galaxy theme |
+| Vanilla JavaScript | Content rendering, canvas effects, interactions |
+| Canvas API | Nebula clouds, stars, shooting stars |
+| Google Fonts | Playfair Display, DM Sans, DM Mono |
+| GitHub Pages | Hosting |
+
+---
+
+## Effects Overview
+
+| Effect | How it works |
+|---|---|
+| Nebula background | Canvas API radial gradients drawn as ellipses |
+| Twinkling stars | 320 canvas circles with sine-wave alpha animation |
+| Shooting stars | Canvas strokes with linear gradient fade, spawned on interval |
+| Custom cursor | Two fixed `div`s following `mousemove` via `requestAnimationFrame` |
+| Magnetic buttons | `mousemove` offset calculation on hover, reset on `mouseleave` |
+| Card shimmer | CSS `::after` pseudo-element sweep triggered on `:hover` |
+| Section reveal | `IntersectionObserver` toggling `.in-view` class |
+
+---
+
+## Contact
+
+- **Email:** [juane@example.com](mailto:juane@example.com)
+- **GitHub:** [@JuaneSchoeman](https://github.com/JuaneSchoeman)
+- **LinkedIn:** [linkedin.com/in/](https://linkedin.com/in/)
+
+---
+
+<p align="center">Made with ♥ and stardust · <a href="https://juaneschoeman.github.io/Virtual-CV/">juaneschoeman.github.io/Virtual-CV</a></p>

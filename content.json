@@ -1,102 +1,93 @@
 {
     "name": "Juané Schoeman",
-    "title": "Undergraduate IT Student",
+    "title": "Software Developer",
+    "greeting": "✦ Welcome to my corner of the universe",
+    "bio": "A South African software developer with a love for building things that are both beautiful and functional. Passionate about clean code, great user experiences, and learning something new every day.",
+    "typewriterPhrases": [
+        "Software Developer_",
+        "Creative Problem Solver_",
+        "Frontend Enthusiast_",
+        "Always Learning_"
+    ],
+    "stats": [
+        { "label": "Based in",          "value": "South Africa 🇿🇦" },
+        { "label": "Focus",             "value": "Full-Stack Dev" },
+        { "label": "Status",            "value": "● Open to work",  "accent": true },
+        { "label": "Favourite language","value": "JavaScript" },
+        { "label": "Coffee order",      "value": "Oat flat white ☕" }
+    ],
     "contact": {
-        "Email": "jua.schoeman@gmail.com",
-        "Linkedin": "www.linkedin.com/in/juané-schoeman-607a11254",
-        "Github": "github.com/JuaneSchoeman"
+        "email": "juane@example.com",
+        "github": "https://github.com/JuaneSchoeman",
+        "linkedin": "https://linkedin.com/in/"
     },
-    "sections": [
+    "skills": [
         {
-            "heading": "About Me",
-            "items": [
-                {
-                    "text": "Detail-oriented and adaptable IT student with strong skills in Java, C#(.NET), and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic, supported by prior experience in healthcare and volunteering. Eager to apply my back-end and database knowledge to real-world software solutions."
-                }
-            ]
+        "category": "Languages",
+        "items": ["JavaScript", "Python", "Java", "HTML", "CSS"]
         },
         {
-            "heading": "Experience",
-            "items": [
-                {
-                    "role": "Software Development Intern",
-                    "company": "DankoSpark, Potchefstroom",
-                    "dates": "Jun 2024 - Jul 2024",
-                    "details": [
-                        "Assisted in developing a website feature using Angular, organized business data in Excel, and participated in daily team meetings.",
-                        "Gained exposure to real-world development workflows and agile collaboration."
-                    ]
-                },
-
-                {
-                    "role": "Student Assistant",
-                    "company": "North-West University, Potchefstroom",
-                    "dates": "Feb 2024 - Jun 2024",
-                    "details": [
-                        "Marked practical assignments, assisted students with their practical work, and supervised tests during the Introduction to Programming course.",
-                        "Gained experience in assessment, student support, and exam supervision within an educational setting."
-                    ]
-                },
-
-                {
-                    "role": "Pharmacy Student",
-                    "company": "Mediclinic, Potchefstroom",
-                    "dates": "Aug 2022 - Oct 2022",
-                    "details": [
-                        "Filled prescriptions and restocked medications as part of a practical pharmacy project.",
-                        "Gained experience working with precision and following strict procedures in a regulated healthcare environment."
-                    ]
-                }
-            ]
+        "category": "Frameworks & Libraries",
+        "items": ["React", "Node.js", "Express", "Bootstrap"]
         },
         {
-            "heading": "Education",
-            "items": [
-                {
-                    "degree": "B.Sc. Information Technology",
-                    "school": "North-West University",
-                    "dates": "2023-Present"
-                }
-            ]
+        "category": "Tools & Platforms",
+        "items": ["Git", "GitHub", "VS Code", "Figma"]
         },
         {
-            "heading": "Skills",
-            "items": [
-                {
-                    "skill": "C#(.NET)",
-                    "level": 85
-                },
-                {
-                    "skill": "Communication",
-                    "level": 85
-                },
-                {
-                    "skill": "SQL",
-                    "level": 80
-                },
-                {
-                    "skill": "Problem Solving",
-                    "level": 90
-                },
-                {
-                    "skill": "Team collaboration",
-                    "level": 85
-                }
-            ]
+        "category": "Soft Skills",
+        "items": ["Team collaboration", "Problem solving", "Quick learner", "Communication"]
+        }
+    ],
+    "experience": [
+        {
+        "date": "[ Update me ]",
+        "company": "Company Name",
+        "role": "Your Role Title",
+        "description": [
+            "Add your key responsibilities and achievements here.",
+            "What did you build, improve, or contribute to?",
+            "Any numbers or impact metrics go a long way."
+        ]
         },
         {
-            "heading": "Volunteering",
-            "items": [
-                {
-                    "role": "Fundraiser Volunteer",
-                    "company": "Abraham Kriel Youth Centre, Potchefstroom",
-                    "dates": "2021–2024 (Each December)",
-                    "details": [
-                        "Assisted customers by answering questions and selling toys at a stall during the annual Liggiefees event, providing friendly and helpful service to visitors.",
-                        "Gained valuable experience in customer service, communication, and sales in a busy event environment."
-                    ]
-                }
-            ]
+        "date": "[ Update me ]",
+        "company": "Company Name",
+        "role": "Your Role Title",
+        "description": [
+            "Add your key responsibilities and achievements here.",
+            "What technologies did you use or learn?"
+        ]
+        }
+    ],
+    "projects": [
+        {
+        "number": "001",
+        "title": "Virtual CV",
+        "description": "An interactive online CV built from scratch and hosted on GitHub Pages. Features a Pac-Man themed animation, dynamic content loading from JSON, and a retro arcade aesthetic.",
+        "stack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+        "github": "https://github.com/JuaneSchoeman/Virtual-CV",
+        "live": "https://juaneschoeman.github.io/Virtual-CV/"
+        },
+        {
+        "number": "002",
+        "title": "Arcademia",
+        "description": "An arcade-style educational game built collaboratively with a team of 13 developers. Owned the design and logic behind the game blocks — including their behaviour, interactions, and visual implementation.",
+        "stack": ["Team of 13", "Game Logic", "UI Design", "Collaboration"],
+        "github": "https://github.com/JuaneSchoeman/Arcademia",
+        "live": ""
+        }
+    ],
+    "education": [
+        {
+        "year": "[ Update me ]",
+        "degree": "Your Degree / Qualification",
+        "institution": "Your University / Institution"
+        },
+        {
+        "year": "[ Update me ]",
+        "degree": "Certification or Course",
+        "institution": "Issuing organisation"
         }
     ]
 }
