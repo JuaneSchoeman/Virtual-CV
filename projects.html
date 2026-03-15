@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Juané Schoeman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Projects page specific styles ── */
+    .projects-hero {
+      min-height: 38vh; max-width: 100%;
+      display: flex; align-items: flex-end;
+      padding: 0;
+    }
+    .projects-hero-inner {
+      max-width: 1180px; width: 100%;
+      margin: 0 auto; padding: 8rem 5rem 4rem;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--purple-soft); }
+    .back-link::before { content: '←'; }
+
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--border2);
+      background: rgba(168,85,247,0.05);
+      padding: .4rem 1rem; cursor: pointer;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: var(--white); border-color: var(--purple);
+      background: rgba(168,85,247,0.15);
+    }
+
+    .proj-count {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem; color: var(--muted);
+      letter-spacing: .1em; margin-bottom: 2rem;
+    }
+    .proj-count span { color: var(--purple-soft); }
+
+    #projects-section { padding-top: 2rem; }
+
+    @media (max-width: 900px) {
+      .projects-hero-inner { padding: 7rem 1.5rem 3rem; }
+      #projects-section { padding: 2rem 1.5rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="nebula-canvas"></canvas>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Juané<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="projects.html" style="color:var(--white)">Projects</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="index.html#volunteering">Volunteering</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="projects-hero">
+  <div class="projects-hero-inner">
+    <a href="index.html" class="back-link">Back to CV</a>
+    <p class="sec-eyebrow">✦ things I've built</p>
+    <h1 class="sec-title" style="margin-bottom:1rem;">
+      <span class="gradient-text">My Projects</span><em class="title-star">✦</em>
+    </h1>
+    <p style="color:var(--muted); font-size:.92rem; line-height:1.85; max-width:560px;">
+      A live feed of everything I'm building on GitHub. Updated automatically whenever I push something new.
+    </p>
+  </div>
+</div>
+
+<div class="nebula-divider"></div>
+
+<!-- PROJECTS SECTION -->
+<section id="projects-section" style="max-width:1180px; margin:0 auto; padding: 3rem 5rem 8rem;">
+
+  <!-- Filter bar — populated by JS -->
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-lang="all">All</button>
+  </div>
+
+  <p class="proj-count" id="proj-count"></p>
+
+  <!-- Project grid -->
+  <div class="proj-grid" id="proj-grid"></div>
+
+</section>
+
+<footer>
+  <span>Juané Schoeman &nbsp;·&nbsp; <span id="yr"></span></span>
+  <span>Made with <span class="footer-heart">♥</span> &amp; stardust</span>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ── Cursor ──
+  const dot  = document.getElementById('cur-dot');
+  const ring = document.getElementById('cur-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function tick() {
+    dot.style.left  = mx + 'px'; dot.style.top  = my + 'px';
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(tick);
+  })();
+
+  // ── Galaxy canvas ──
+  const canvas = document.getElementById('nebula-canvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H, stars = [], nebulae = [], shooters = [];
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    nebulae = [
+      { x:W*.78, y:H*.18, rx:W*.40, ry:H*.34, colors:['rgba(120,40,200,0.18)','rgba(168,85,247,0.08)','transparent'] },
+      { x:W*.16, y:H*.75, rx:W*.34, ry:H*.30, colors:['rgba(30,80,180,0.14)','rgba(96,165,250,0.07)','transparent'] },
+      { x:W*.62, y:H*.55, rx:W*.24, ry:H*.22, colors:['rgba(200,50,130,0.10)','rgba(244,114,182,0.05)','transparent'] },
+    ];
+    stars = Array.from({ length: 280 }, () => ({
+      x: Math.random()*W, y: Math.random()*H,
+      r: Math.random()*1.6+0.15, speed: Math.random()*.15+.02,
+      tw: Math.random()*.025+.004, twOff: Math.random()*Math.PI*2,
+      c: Math.random()<.11?'pink':Math.random()<.2?'blue':Math.random()<.3?'purple':'white'
+    }));
+  }
+  resize(); window.addEventListener('resize', resize);
+  setInterval(() => shooters.push({ x:Math.random()*W*.7, y:Math.random()*H*.4, len:90+Math.random()*100, speed:9+Math.random()*6, alpha:1, angle:Math.PI/5+(Math.random()-.5)*.35 }), 3000);
+  let frame = 0;
+  (function draw() {
+    ctx.clearRect(0,0,W,H); frame++;
+    nebulae.forEach(n => {
+      ctx.save(); ctx.scale(1, n.ry/n.rx);
+      const yS = n.y*(n.rx/n.ry);
+      const g = ctx.createRadialGradient(n.x,yS,0,n.x,yS,n.rx);
+      n.colors.forEach((c,i) => g.addColorStop(i/(n.colors.length-1),c));
+      ctx.beginPath(); ctx.arc(n.x,yS,n.rx,0,Math.PI*2); ctx.fillStyle=g; ctx.fill(); ctx.restore();
+    });
+    stars.forEach(s => {
+      const a = .08+.88*(.5+.5*Math.sin(frame*s.tw+s.twOff));
+      const color = s.c==='purple'?`rgba(168,85,247,${a})`:s.c==='pink'?`rgba(244,114,182,${a*.85})`:s.c==='blue'?`rgba(96,165,250,${a*.85})`:`rgba(240,235,255,${a*.65})`;
+      if(s.r>1.1){ctx.beginPath();ctx.arc(s.x,s.y,s.r*3.8,0,Math.PI*2);ctx.fillStyle=color.replace(/[\d.]+\)$/,`${a*.08})`);ctx.fill();}
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=color; ctx.fill();
+      s.y-=s.speed; if(s.y<-3){s.y=H+3;s.x=Math.random()*W;}
+    });
+    shooters.forEach(sh => {
+      ctx.save(); ctx.globalAlpha=sh.alpha;
+      const tx=sh.x-Math.cos(sh.angle)*sh.len, ty=sh.y-Math.sin(sh.angle)*sh.len;
+      const g=ctx.createLinearGradient(sh.x,sh.y,tx,ty);
+      g.addColorStop(0,'rgba(220,180,255,.95)'); g.addColorStop(.4,'rgba(168,85,247,.5)'); g.addColorStop(1,'transparent');
+      ctx.strokeStyle=g; ctx.lineWidth=1.6; ctx.shadowBlur=12; ctx.shadowColor='rgba(168,85,247,.8)';
+      ctx.beginPath(); ctx.moveTo(sh.x,sh.y); ctx.lineTo(tx,ty); ctx.stroke(); ctx.restore();
+      sh.x+=Math.cos(sh.angle)*sh.speed; sh.y+=Math.sin(sh.angle)*sh.speed; sh.alpha-=.014;
+    });
+    shooters = shooters.filter(s=>s.alpha>0);
+    requestAnimationFrame(draw);
+  })();
+
+  // ── Fetch & render GitHub repos ──
+  const GITHUB_USERNAME = 'JuaneSchoeman';
+  const container  = document.getElementById('proj-grid');
+  const filterBar  = document.getElementById('filter-bar');
+  const countEl    = document.getElementById('proj-count');
+  let allRepos     = [];
+  let activeFilter = 'all';
+
+  container.innerHTML = `
+    <div class="proj-card placeholder">
+      <div class="ph-icon">🌌</div>
+      <p>Loading projects from GitHub...</p>
+    </div>`;
+
+  fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
+    .then(res => { if(!res.ok) throw new Error(res.status); return res.json(); })
+    .then(repos => {
+      allRepos = repos.filter(r => !r.fork).sort((a,b) => new Date(b.updated_at)-new Date(a.updated_at));
+
+      // Build language filter buttons
+      const languages = [...new Set(allRepos.map(r => r.language).filter(Boolean))].sort();
+      languages.forEach(lang => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.lang = lang;
+        btn.textContent = lang;
+        btn.addEventListener('click', () => setFilter(lang));
+        filterBar.appendChild(btn);
+      });
+
+      document.querySelector('.filter-btn[data-lang="all"]').addEventListener('click', () => setFilter('all'));
+      renderRepos(allRepos);
+    })
+    .catch(err => {
+      console.error(err);
+      container.innerHTML = `
+        <div class="proj-card placeholder">
+          <div class="ph-icon">⚠️</div>
+          <p>Could not load projects from GitHub.<br/>Check back soon!</p>
+        </div>`;
+    });
+
+  function setFilter(lang) {
+    activeFilter = lang;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    const filtered = lang === 'all' ? allRepos : allRepos.filter(r => r.language === lang);
+    renderRepos(filtered);
+  }
+
+  function renderRepos(repos) {
+    countEl.innerHTML = `Showing <span>${repos.length}</span> project${repos.length !== 1 ? 's' : ''}`;
+
+    if (repos.length === 0) {
+      container.innerHTML = `
+        <div class="proj-card placeholder">
+          <div class="ph-icon">🔭</div>
+          <p>No projects found for this language yet.</p>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = repos.map((repo, i) => {
+      const num      = String(i + 1).padStart(3, '0');
+      const desc     = repo.description || 'No description provided yet.';
+      const lang     = repo.language ? `<span class="proj-tag">${repo.language}</span>` : '';
+      const liveLink = repo.homepage  ? `<a href="${repo.homepage}" target="_blank">Live →</a>` : '';
+      const updated  = new Date(repo.updated_at).toLocaleDateString('en-ZA', { year:'numeric', month:'short' });
+      const stars    = repo.stargazers_count > 0 ? `<span class="proj-tag">★ ${repo.stargazers_count}</span>` : '';
+      return `
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <span class="proj-num">${num}</span>
+            <div class="proj-links-top">
+              <a href="${repo.html_url}" target="_blank">GitHub →</a>
+              ${liveLink}
+            </div>
+          </div>
+          <h3 class="proj-title">${repo.name}</h3>
+          <p class="proj-desc">${desc}</p>
+          <div class="proj-stack">
+            ${lang}
+            <span class="proj-tag">Updated ${updated}</span>
+            ${stars}
+          </div>
+        </div>`;
+    }).join('');
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e,i) => {
+        if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    container.querySelectorAll('.proj-card').forEach(el => obs.observe(el));
+
+    // Magnetic buttons
+    container.querySelectorAll('.proj-links-top a').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r=btn.getBoundingClientRect();
+        btn.style.transform=`translate(${(e.clientX-(r.left+r.width/2))*.3}px,${(e.clientY-(r.top+r.height/2))*.3}px)`;
+      });
+      btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
+    });
+  }
+</script>
+</body>
+</html>

@@ -28,7 +28,7 @@ function renderAll(data) {
   renderStats(data.stats);
   renderSkills(data.skills);
   renderExperience(data.experience);
-  renderProjects(data.projects);
+  fetchGitHubProjects(data.github_username);
   renderEducation(data.education);
   renderContact(data.contact);
 }
@@ -88,34 +88,103 @@ function renderExperience(experience) {
   `).join('');
 }
 
-function renderProjects(projects) {
+/* ─── PROJECTS — AUTO-LOADED FROM GITHUB API ─── */
+
+function fetchGitHubProjects(username) {
   const container = document.getElementById('proj-grid');
   if (!container) return;
-  const cards = projects.map(p => `
-    <div class="proj-card">
-      <div class="proj-card-top">
-        <span class="proj-num">${p.number}</span>
-        <div class="proj-links-top">
-          ${p.github ? `<a href="${p.github}" target="_blank">GitHub →</a>` : ''}
-          ${p.live   ? `<a href="${p.live}"   target="_blank">Live →</a>`   : ''}
-        </div>
-      </div>
-      <h3 class="proj-title">${p.title}</h3>
-      <p class="proj-desc">${p.description}</p>
-      <div class="proj-stack">
-        ${p.stack.map(t => `<span class="proj-tag">${t}</span>`).join('')}
-      </div>
-    </div>
-  `).join('');
 
-  // Add a placeholder slot at the end
-  const placeholder = `
+  // Show a loading state while fetching
+  container.innerHTML = `
     <div class="proj-card placeholder">
       <div class="ph-icon">🌌</div>
-      <p>The universe awaits your next project.</p>
+      <p>Loading projects from GitHub...</p>
     </div>
   `;
-  container.innerHTML = cards + placeholder;
+
+  fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
+    .then(res => {
+      if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+      return res.json();
+    })
+    .then(repos => {
+      // Filter out forked repos and sort by most recently updated
+      const ownRepos = repos
+        .filter(r => !r.fork)
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+      if (ownRepos.length === 0) {
+        container.innerHTML = `
+          <div class="proj-card placeholder">
+            <div class="ph-icon">🌌</div>
+            <p>No public repositories found yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const cards = ownRepos.map((repo, i) => {
+        const num       = String(i + 1).padStart(3, '0');
+        const desc      = repo.description || 'No description provided yet.';
+        const language  = repo.language ? `<span class="proj-tag">${repo.language}</span>` : '';
+        const liveLink  = repo.homepage
+          ? `<a href="${repo.homepage}" target="_blank">Live →</a>`
+          : '';
+        const updatedAt = new Date(repo.updated_at).toLocaleDateString('en-ZA', { year: 'numeric', month: 'short' });
+
+        return `
+          <div class="proj-card">
+            <div class="proj-card-top">
+              <span class="proj-num">${num}</span>
+              <div class="proj-links-top">
+                <a href="${repo.html_url}" target="_blank">GitHub →</a>
+                ${liveLink}
+              </div>
+            </div>
+            <h3 class="proj-title">${repo.name}</h3>
+            <p class="proj-desc">${desc}</p>
+            <div class="proj-stack">
+              ${language}
+              <span class="proj-tag">Updated ${updatedAt}</span>
+              ${repo.stargazers_count > 0 ? `<span class="proj-tag">★ ${repo.stargazers_count}</span>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = cards;
+
+      // Re-run scroll reveal on the newly added cards
+      const cardObs = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 110);
+            cardObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      container.querySelectorAll('.proj-card').forEach(el => cardObs.observe(el));
+
+      // Re-run magnetic buttons on new cards' links
+      container.querySelectorAll('.proj-links-top a').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const r  = btn.getBoundingClientRect();
+          const dx = (e.clientX - (r.left + r.width  / 2)) * 0.32;
+          const dy = (e.clientY - (r.top  + r.height / 2)) * 0.32;
+          btn.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+      });
+    })
+    .catch(err => {
+      console.error('Could not load GitHub repos:', err);
+      container.innerHTML = `
+        <div class="proj-card placeholder">
+          <div class="ph-icon">⚠️</div>
+          <p>Could not load projects from GitHub.<br/>Check back soon!</p>
+        </div>
+      `;
+    });
 }
 
 function renderEducation(education) {

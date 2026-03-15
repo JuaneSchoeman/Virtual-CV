@@ -1,93 +1,97 @@
 {
   "name": "Juané Schoeman",
-  "title": "Software Developer",
+  "title": "BSc Honours Student — Computer Science & IT",
+  "github_username": "JuaneSchoeman",
   "greeting": "✦ Welcome to my corner of the universe",
-  "bio": "A South African software developer with a love for building things that are both beautiful and functional. Passionate about clean code, great user experiences, and learning something new every day.",
+  "bio": "Detail-oriented and adaptable IT student with strong skills in Java, C#(.NET), and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic. Eager to apply my back-end and database knowledge to real-world software solutions.",
   "typewriterPhrases": [
+    "BSc Honours Student_",
     "Software Developer_",
     "Creative Problem Solver_",
-    "Frontend Enthusiast_",
     "Always Learning_"
   ],
   "stats": [
-    { "label": "Based in",          "value": "South Africa 🇿🇦" },
-    { "label": "Focus",             "value": "Full-Stack Dev" },
-    { "label": "Status",            "value": "● Open to work",  "accent": true },
-    { "label": "Favourite language","value": "JavaScript" },
-    { "label": "Coffee order",      "value": "Oat flat white ☕" }
+    { "label": "Based in",           "value": "Potchefstroom, SA 🇿🇦" },
+    { "label": "Degree",             "value": "BSc Hons Computer Science & IT" },
+    { "label": "Status",             "value": "● Open to work", "accent": true },
+    { "label": "Favourite language", "value": "C# (.NET)" },
+    { "label": "Coffee order",       "value": "Oat flat white ☕" }
   ],
   "contact": {
-    "email": "juane@example.com",
+    "email": "jua.schoeman@gmail.com",
     "github": "https://github.com/JuaneSchoeman",
-    "linkedin": "https://linkedin.com/in/"
+    "linkedin": "https://linkedin.com/in/juané-schoeman"
   },
   "skills": [
     {
       "category": "Languages",
-      "items": ["JavaScript", "Python", "Java", "HTML", "CSS"]
+      "items": ["C# (.NET)", "Java", "SQL", "JavaScript", "HTML", "CSS"]
     },
     {
       "category": "Frameworks & Libraries",
-      "items": ["React", "Node.js", "Express", "Bootstrap"]
+      "items": ["Angular", ".NET", "Node.js", "Bootstrap"]
     },
     {
       "category": "Tools & Platforms",
-      "items": ["Git", "GitHub", "VS Code", "Figma"]
+      "items": ["Git", "GitHub", "VS Code", "Excel", "Figma"]
     },
     {
       "category": "Soft Skills",
-      "items": ["Team collaboration", "Problem solving", "Quick learner", "Communication"]
+      "items": ["Problem solving", "Team collaboration", "Communication", "Analytical thinking", "Precision"]
     }
   ],
   "experience": [
     {
-      "date": "[ Update me ]",
-      "company": "Company Name",
-      "role": "Your Role Title",
+      "date": "Jun 2024 — Jul 2024",
+      "company": "DankoSpark · Potchefstroom",
+      "role": "Software Development Intern",
       "description": [
-        "Add your key responsibilities and achievements here.",
-        "What did you build, improve, or contribute to?",
-        "Any numbers or impact metrics go a long way."
+        "Assisted in developing a website feature using Angular.",
+        "Organised business data in Excel and maintained data accuracy across systems.",
+        "Participated in daily team meetings and gained exposure to real-world agile workflows."
       ]
     },
     {
-      "date": "[ Update me ]",
-      "company": "Company Name",
-      "role": "Your Role Title",
+      "date": "Feb 2024 — Jun 2024",
+      "company": "North-West University · Potchefstroom",
+      "role": "Student Assistant",
       "description": [
-        "Add your key responsibilities and achievements here.",
-        "What technologies did you use or learn?"
+        "Marked practical assignments for the Introduction to Programming course.",
+        "Assisted students with practical work and provided one-on-one academic support.",
+        "Supervised tests and gained experience in assessment and exam invigilation."
       ]
-    }
-  ],
-  "projects": [
-    {
-      "number": "001",
-      "title": "Virtual CV",
-      "description": "An interactive online CV built from scratch and hosted on GitHub Pages. Features a Pac-Man themed animation, dynamic content loading from JSON, and a retro arcade aesthetic.",
-      "stack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      "github": "https://github.com/JuaneSchoeman/Virtual-CV",
-      "live": "https://juaneschoeman.github.io/Virtual-CV/"
     },
     {
-      "number": "002",
-      "title": "Arcademia",
-      "description": "An arcade-style educational game built collaboratively with a team of 13 developers. Owned the design and logic behind the game blocks — including their behaviour, interactions, and visual implementation.",
-      "stack": ["Team of 13", "Game Logic", "UI Design", "Collaboration"],
-      "github": "https://github.com/JuaneSchoeman/Arcademia",
-      "live": ""
+      "date": "Aug 2022 — Oct 2022",
+      "company": "Mediclinic · Potchefstroom",
+      "role": "Pharmacy Student (Practical)",
+      "description": [
+        "Filled prescriptions and restocked medications as part of a practical pharmacy project.",
+        "Developed precision and adherence to strict procedures in a regulated healthcare environment."
+      ]
     }
   ],
   "education": [
     {
-      "year": "[ Update me ]",
-      "degree": "Your Degree / Qualification",
-      "institution": "Your University / Institution"
+      "year": "2025 — Present",
+      "degree": "Bachelor of Science Honours in Computer Science and Information Technology",
+      "institution": "North-West University, Potchefstroom"
     },
     {
-      "year": "[ Update me ]",
-      "degree": "Certification or Course",
-      "institution": "Issuing organisation"
+      "year": "2023 — 2024",
+      "degree": "BSc Information Technology",
+      "institution": "North-West University, Potchefstroom"
+    }
+  ],
+  "volunteering": [
+    {
+      "date": "2021 — 2024 (Each December)",
+      "organisation": "Abraham Kriel Youth Centre · Potchefstroom",
+      "role": "Fundraiser Volunteer",
+      "description": [
+        "Assisted customers and sold toys at a stall during the annual Liggiefees event.",
+        "Gained experience in customer service, communication, and sales in a busy event environment."
+      ]
     }
   ]
 }
