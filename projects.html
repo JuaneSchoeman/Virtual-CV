@@ -202,8 +202,8 @@
       allRepos = repos
         .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-      // Build language filter buttons
-      const languages = [...new Set(allRepos.map(r => r.language).filter(Boolean))].sort();
+      // Build language filter buttons (null language repos show as "Other")
+      const languages = [...new Set(allRepos.map(r => r.language || 'Other'))].sort();
       languages.forEach(lang => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
@@ -228,7 +228,7 @@
   function setFilter(lang) {
     activeFilter = lang;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-    const filtered = lang === 'all' ? allRepos : allRepos.filter(r => r.language === lang);
+    const filtered = lang === 'all' ? allRepos : allRepos.filter(r => (r.language || 'Other') === lang);
     renderRepos(filtered);
   }
 
@@ -247,7 +247,7 @@
     container.innerHTML = repos.map((repo, i) => {
       const num      = String(i + 1).padStart(3, '0');
       const desc     = repo.description || 'No description provided yet.';
-      const lang     = repo.language ? `<span class="proj-tag">${repo.language}</span>` : '';
+      const lang     = `<span class="proj-tag">${repo.language || 'Other'}</span>`;
       const liveLink = repo.homepage  ? `<a href="${repo.homepage}" target="_blank">Live →</a>` : '';
       const updated  = new Date(repo.updated_at).toLocaleDateString('en-ZA', { year:'numeric', month:'short' });
       const stars    = repo.stargazers_count > 0 ? `<span class="proj-tag">★ ${repo.stargazers_count}</span>` : '';
