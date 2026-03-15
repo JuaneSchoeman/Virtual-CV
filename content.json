@@ -1,93 +1,93 @@
 {
-    "name": "Juané Schoeman",
-    "title": "Software Developer",
-    "greeting": "✦ Welcome to my corner of the universe",
-    "bio": "A South African software developer with a love for building things that are both beautiful and functional. Passionate about clean code, great user experiences, and learning something new every day.",
-    "typewriterPhrases": [
-        "Software Developer_",
-        "Creative Problem Solver_",
-        "Frontend Enthusiast_",
-        "Always Learning_"
-    ],
-    "stats": [
-        { "label": "Based in",          "value": "South Africa 🇿🇦" },
-        { "label": "Focus",             "value": "Full-Stack Dev" },
-        { "label": "Status",            "value": "● Open to work",  "accent": true },
-        { "label": "Favourite language","value": "JavaScript" },
-        { "label": "Coffee order",      "value": "Oat flat white ☕" }
-    ],
-    "contact": {
-        "email": "juane@example.com",
-        "github": "https://github.com/JuaneSchoeman",
-        "linkedin": "https://linkedin.com/in/"
+  "name": "Juané Schoeman",
+  "title": "Software Developer",
+  "greeting": "✦ Welcome to my corner of the universe",
+  "bio": "A South African software developer with a love for building things that are both beautiful and functional. Passionate about clean code, great user experiences, and learning something new every day.",
+  "typewriterPhrases": [
+    "Software Developer_",
+    "Creative Problem Solver_",
+    "Frontend Enthusiast_",
+    "Always Learning_"
+  ],
+  "stats": [
+    { "label": "Based in",          "value": "South Africa 🇿🇦" },
+    { "label": "Focus",             "value": "Full-Stack Dev" },
+    { "label": "Status",            "value": "● Open to work",  "accent": true },
+    { "label": "Favourite language","value": "JavaScript" },
+    { "label": "Coffee order",      "value": "Oat flat white ☕" }
+  ],
+  "contact": {
+    "email": "juane@example.com",
+    "github": "https://github.com/JuaneSchoeman",
+    "linkedin": "https://linkedin.com/in/"
+  },
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["JavaScript", "Python", "Java", "HTML", "CSS"]
     },
-    "skills": [
-        {
-        "category": "Languages",
-        "items": ["JavaScript", "Python", "Java", "HTML", "CSS"]
-        },
-        {
-        "category": "Frameworks & Libraries",
-        "items": ["React", "Node.js", "Express", "Bootstrap"]
-        },
-        {
-        "category": "Tools & Platforms",
-        "items": ["Git", "GitHub", "VS Code", "Figma"]
-        },
-        {
-        "category": "Soft Skills",
-        "items": ["Team collaboration", "Problem solving", "Quick learner", "Communication"]
-        }
-    ],
-    "experience": [
-        {
-        "date": "[ Update me ]",
-        "company": "Company Name",
-        "role": "Your Role Title",
-        "description": [
-            "Add your key responsibilities and achievements here.",
-            "What did you build, improve, or contribute to?",
-            "Any numbers or impact metrics go a long way."
-        ]
-        },
-        {
-        "date": "[ Update me ]",
-        "company": "Company Name",
-        "role": "Your Role Title",
-        "description": [
-            "Add your key responsibilities and achievements here.",
-            "What technologies did you use or learn?"
-        ]
-        }
-    ],
-    "projects": [
-        {
-        "number": "001",
-        "title": "Virtual CV",
-        "description": "An interactive online CV built from scratch and hosted on GitHub Pages. Features a Pac-Man themed animation, dynamic content loading from JSON, and a retro arcade aesthetic.",
-        "stack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-        "github": "https://github.com/JuaneSchoeman/Virtual-CV",
-        "live": "https://juaneschoeman.github.io/Virtual-CV/"
-        },
-        {
-        "number": "002",
-        "title": "Arcademia",
-        "description": "An arcade-style educational game built collaboratively with a team of 13 developers. Owned the design and logic behind the game blocks — including their behaviour, interactions, and visual implementation.",
-        "stack": ["Team of 13", "Game Logic", "UI Design", "Collaboration"],
-        "github": "https://github.com/JuaneSchoeman/Arcademia",
-        "live": ""
-        }
-    ],
-    "education": [
-        {
-        "year": "[ Update me ]",
-        "degree": "Your Degree / Qualification",
-        "institution": "Your University / Institution"
-        },
-        {
-        "year": "[ Update me ]",
-        "degree": "Certification or Course",
-        "institution": "Issuing organisation"
-        }
-    ]
+    {
+      "category": "Frameworks & Libraries",
+      "items": ["React", "Node.js", "Express", "Bootstrap"]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": ["Git", "GitHub", "VS Code", "Figma"]
+    },
+    {
+      "category": "Soft Skills",
+      "items": ["Team collaboration", "Problem solving", "Quick learner", "Communication"]
+    }
+  ],
+  "experience": [
+    {
+      "date": "[ Update me ]",
+      "company": "Company Name",
+      "role": "Your Role Title",
+      "description": [
+        "Add your key responsibilities and achievements here.",
+        "What did you build, improve, or contribute to?",
+        "Any numbers or impact metrics go a long way."
+      ]
+    },
+    {
+      "date": "[ Update me ]",
+      "company": "Company Name",
+      "role": "Your Role Title",
+      "description": [
+        "Add your key responsibilities and achievements here.",
+        "What technologies did you use or learn?"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "number": "001",
+      "title": "Virtual CV",
+      "description": "An interactive online CV built from scratch and hosted on GitHub Pages. Features a Pac-Man themed animation, dynamic content loading from JSON, and a retro arcade aesthetic.",
+      "stack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      "github": "https://github.com/JuaneSchoeman/Virtual-CV",
+      "live": "https://juaneschoeman.github.io/Virtual-CV/"
+    },
+    {
+      "number": "002",
+      "title": "Arcademia",
+      "description": "An arcade-style educational game built collaboratively with a team of 13 developers. Owned the design and logic behind the game blocks — including their behaviour, interactions, and visual implementation.",
+      "stack": ["Team of 13", "Game Logic", "UI Design", "Collaboration"],
+      "github": "https://github.com/JuaneSchoeman/Arcademia",
+      "live": ""
+    }
+  ],
+  "education": [
+    {
+      "year": "[ Update me ]",
+      "degree": "Your Degree / Qualification",
+      "institution": "Your University / Institution"
+    },
+    {
+      "year": "[ Update me ]",
+      "degree": "Certification or Course",
+      "institution": "Issuing organisation"
+    }
+  ]
 }

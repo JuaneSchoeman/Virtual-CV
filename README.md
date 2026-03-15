@@ -2,11 +2,11 @@
 
 A personal portfolio and interactive CV built with vanilla HTML, CSS, and JavaScript. Features a galaxy/nebula theme with animated stars, shooting stars, glowing cards, magnetic buttons, and smooth scroll transitions. All content is driven from a single `content.json` file — no frameworks, no build tools, no dependencies.
 
- **Live site:** [juaneschoeman.github.io/Virtual-CV](https://juaneschoeman.github.io/Virtual-CV/)
+🌐 **Live site:** [juaneschoeman.github.io/Virtual-CV](https://juaneschoeman.github.io/Virtual-CV/)
 
 ---
 
-## Features
+## ✨ Features
 
 - **Galaxy/nebula background** — animated canvas with 320 twinkling stars, coloured nebula clouds, and shooting stars
 - **Custom cursor** — glowing purple dot with a smooth trailing ring
@@ -20,7 +20,7 @@ A personal portfolio and interactive CV built with vanilla HTML, CSS, and JavaSc
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Virtual-CV/
@@ -34,7 +34,7 @@ Virtual-CV/
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 **To view locally:**
 1. Clone or download the repository
@@ -53,7 +53,7 @@ open index.html
 
 ---
 
-## How to Customise
+## ✏️ How to Customise
 
 All personal content lives in **`content.json`**. Open it and update the fields — the site rebuilds automatically.
 
@@ -99,7 +99,7 @@ All personal content lives in **`content.json`**. Open it and update the fields 
 
 ---
 
-## Built With
+## 🛠️ Built With
 
 | Technology | Purpose |
 |---|---|
@@ -112,7 +112,7 @@ All personal content lives in **`content.json`**. Open it and update the fields 
 
 ---
 
-## Effects Overview
+## 🌌 Effects Overview
 
 | Effect | How it works |
 |---|---|
@@ -126,7 +126,7 @@ All personal content lives in **`content.json`**. Open it and update the fields 
 
 ---
 
-## Contact
+## 📬 Contact
 
 - **Email:** [juane@example.com](mailto:juane@example.com)
 - **GitHub:** [@JuaneSchoeman](https://github.com/JuaneSchoeman)
