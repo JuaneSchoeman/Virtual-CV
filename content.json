@@ -83,26 +83,6 @@
       "institution": "North-West University, Potchefstroom"
     }
   ],
-  "certifications": [
-    {
-      "title": "MATLAB Certification 1",
-      "issuer": "MathWorks",
-      "year": "2024",
-      "url": "https://your-certificate-url-here"
-    },
-    {
-      "title": "MATLAB Certification 2",
-      "issuer": "MathWorks",
-      "year": "2024",
-      "url": "https://your-certificate-url-here"
-    },
-    {
-      "title": "MATLAB Certification 3",
-      "issuer": "MathWorks",
-      "year": "2024",
-      "url": "https://your-certificate-url-here"
-    }
-  ],
   "volunteering": [
     {
       "date": "Dec 2021 · Dec 2022 · Dec 2023 · Dec 2024 · Dec 2025",

@@ -42,7 +42,6 @@ function renderAll(data) {
   renderExperience(data.experience);
   fetchGitHubProjects(data.github_username);
   renderEducation(data.education);
-  renderCertifications(data.certifications);
   renderVolunteering(data.volunteering);
   renderContact(data.contact);
 }
