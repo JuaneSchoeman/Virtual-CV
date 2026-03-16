@@ -4,9 +4,21 @@
    runs all galaxy effects & interactions
    ═══════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════
+   Juané Schoeman — Portfolio Script
+   Loads content from content.json and
+   runs all galaxy effects & interactions
+   ═══════════════════════════════════════════ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('content.json')
-    .then(res => res.json())
+  // Use absolute path so it works on GitHub Pages regardless of hash/navigation
+  const jsonPath = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/') + 'content.json';
+
+  fetch(jsonPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
     .then(data => {
       renderAll(data);
       initCursor();
@@ -15,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
       initScrollReveal();
       initMagneticButtons();
     })
-    .catch(err => console.error('Could not load content.json:', err));
+    .catch(err => {
+      console.error('Could not load content.json:', err);
+    });
 });
-
-/* ─── RENDER ALL SECTIONS FROM JSON ─── */
 
 function renderAll(data) {
   document.title = `${data.name} — ${data.title}`;
