@@ -9,14 +9,11 @@
 </head>
 <body>
 
-<!-- Galaxy canvas -->
 <canvas id="nebula-canvas"></canvas>
-
-<!-- Cursor -->
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">Juané<span>.</span></a>
   <ul class="nav-links">
@@ -24,12 +21,13 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#volunteering">Volunteering</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <div id="hero">
   <div class="hero-inner">
     <div class="hero-left">
@@ -38,11 +36,9 @@
       <p class="hero-title"><span id="typed"></span></p>
       <p class="hero-bio" id="hero-bio"></p>
       <div class="hero-cta">
-        <a href="#projects" class="btn-fill">See My Work</a>
-        <a href="#contact"  class="btn-ghost">Get In Touch</a>
-        <a href="Juane_Schoeman_CV.pdf" download class="btn-ghost">
-          ↓ Download CV
-        </a>
+        <a href="projects.html" class="btn-fill">See My Work</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+        <a href="Juane_Schoeman_CV.pdf" download class="btn-ghost">↓ Download CV</a>
       </div>
     </div>
     <div class="hero-right">
@@ -63,7 +59,7 @@
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ SKILLS ═══ -->
+<!-- SKILLS -->
 <section id="skills" class="sec-reveal">
   <p class="sec-eyebrow">✦ &nbsp;01 — what I work with</p>
   <h2 class="sec-title"><span class="gradient-text">Skills</span><em class="title-star">✦</em></h2>
@@ -72,7 +68,7 @@
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ EXPERIENCE ═══ -->
+<!-- EXPERIENCE -->
 <section id="experience" class="sec-reveal">
   <p class="sec-eyebrow">✦ &nbsp;02 — where I've been</p>
   <h2 class="sec-title"><span class="gradient-text">Experience</span><em class="title-star">✦</em></h2>
@@ -81,7 +77,7 @@
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ PROJECTS TEASER ═══ -->
+<!-- PROJECTS TEASER -->
 <section id="projects" class="sec-reveal">
   <p class="sec-eyebrow">✦ &nbsp;03 — things I've built</p>
   <h2 class="sec-title"><span class="gradient-text">Projects</span><em class="title-star">✦</em></h2>
@@ -94,7 +90,7 @@
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ EDUCATION ═══ -->
+<!-- EDUCATION -->
 <section id="education" class="sec-reveal">
   <p class="sec-eyebrow">✦ &nbsp;04 — how I got here</p>
   <h2 class="sec-title"><span class="gradient-text">Education</span><em class="title-star">✦</em></h2>
@@ -103,26 +99,35 @@
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ VOLUNTEERING ═══ -->
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="sec-reveal">
+  <p class="sec-eyebrow">✦ &nbsp;05 — certified</p>
+  <h2 class="sec-title"><span class="gradient-text">Certifications</span><em class="title-star">✦</em></h2>
+  <div class="cert-grid" id="cert-grid"></div>
+</section>
+
+<div class="nebula-divider"></div>
+
+<!-- VOLUNTEERING -->
 <section id="volunteering" class="sec-reveal">
-  <p class="sec-eyebrow">✦ &nbsp;05 — giving back</p>
+  <p class="sec-eyebrow">✦ &nbsp;06 — giving back</p>
   <h2 class="sec-title"><span class="gradient-text">Volunteering</span><em class="title-star">✦</em></h2>
   <div class="exp-list" id="vol-list"></div>
 </section>
 
 <div class="nebula-divider"></div>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- CONTACT -->
 <section id="contact" class="sec-reveal">
   <div class="contact-inner">
-    <p class="sec-eyebrow">✦ &nbsp;06 — say hello</p>
+    <p class="sec-eyebrow">✦ &nbsp;07 — say hello</p>
     <h2 class="sec-title"><span class="gradient-text">Let's Connect</span><em class="title-star">✦</em></h2>
     <p class="contact-sub">
       I'm actively looking for graduate and junior developer roles. Whether you have a
       position, a project, or just want to chat — I'd love to hear from you!
     </p>
     <div class="contact-grid">
-      <a href="/cdn-cgi/l/email-protection#b4dec1d59ac7d7dcdbd1d9d5daf4d3d9d5ddd89ad7dbd9" id="contact-email" href="#" class="contact-btn">
+      <a id="contact-email" href="#" class="contact-btn">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Email Me
       </a>
@@ -147,4 +152,6 @@
   <span>Made with <span class="footer-heart">♥</span> &amp; stardust</span>
 </footer>
 
-<scri
+<script src="script.js"></script>
+</body>
+</html>
