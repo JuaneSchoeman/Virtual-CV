@@ -30,6 +30,7 @@ function renderAll(data) {
   renderExperience(data.experience);
   fetchGitHubProjects(data.github_username);
   renderEducation(data.education);
+  renderCertifications(data.certifications);
   renderVolunteering(data.volunteering);
   renderContact(data.contact);
 }
@@ -185,6 +186,21 @@ function renderEducation(education) {
       <h3 class="edu-degree">${edu.degree}</h3>
       <p class="edu-school">${edu.institution}</p>
     </div>
+  `).join('');
+}
+
+function renderCertifications(certifications) {
+  const container = document.getElementById('cert-grid');
+  if (!container || !certifications) return;
+  container.innerHTML = certifications.map(c => `
+    <a class="cert-card" href="${c.url}" target="_blank" rel="noopener noreferrer">
+      <p class="cert-issuer">${c.issuer}</p>
+      <h3 class="cert-title">${c.title}</h3>
+      <div class="cert-footer">
+        <span class="cert-year">${c.year}</span>
+        <span class="cert-link">View Certificate →</span>
+      </div>
+    </a>
   `).join('');
 }
 

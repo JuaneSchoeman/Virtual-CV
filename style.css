@@ -350,6 +350,53 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
 .proj-card.placeholder .ph-icon { font-size: 2rem; opacity: .35; }
 .proj-card.placeholder p { color: var(--muted); font-size: .8rem; line-height: 1.7; }
 
+/* ── Certifications ── */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.2rem; }
+.cert-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  padding: 1.8rem; position: relative; overflow: hidden;
+  backdrop-filter: blur(16px);
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .5s, transform .5s, border-color .3s, box-shadow .3s;
+  text-decoration: none; display: block;
+}
+.cert-card.visible { opacity: 1; transform: translateY(0); }
+.cert-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--pink), var(--purple), transparent);
+}
+.cert-card:hover {
+  border-color: rgba(168,85,247,0.45);
+  box-shadow: 0 8px 40px rgba(168,85,247,0.14);
+}
+.cert-card::after {
+  content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(168,85,247,0.07), transparent);
+  transform: skewX(-20deg); transition: left .55s ease; pointer-events: none;
+}
+.cert-card:hover::after { left: 130%; }
+.cert-issuer {
+  font-family: 'DM Mono', monospace; font-size: .68rem;
+  background: linear-gradient(135deg, var(--pink), var(--purple-soft));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: .14em; text-transform: uppercase; margin-bottom: .7rem;
+}
+.cert-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700; color: var(--white);
+  margin-bottom: .5rem;
+}
+.cert-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 1.2rem;
+}
+.cert-year { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--muted); }
+.cert-link {
+  font-family: 'DM Mono', monospace; font-size: .68rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--purple-soft);
+}
+
 /* ── Education ── */
 .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.2rem; }
 .edu-card {
