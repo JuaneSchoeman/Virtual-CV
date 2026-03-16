@@ -277,15 +277,6 @@
       });
     }, { threshold: 0.08 });
     container.querySelectorAll('.proj-card').forEach(el => obs.observe(el));
-
-    // Magnetic buttons
-    container.querySelectorAll('.proj-links-top a').forEach(btn => {
-      btn.addEventListener('mousemove', e => {
-        const r=btn.getBoundingClientRect();
-        btn.style.transform=`translate(${(e.clientX-(r.left+r.width/2))*.3}px,${(e.clientY-(r.top+r.height/2))*.3}px)`;
-      });
-      btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
-    });
   }
 </script>
 </body>

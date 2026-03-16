@@ -286,7 +286,8 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
   font-family: 'DM Mono', monospace; font-size: .7rem;
   background: linear-gradient(135deg, var(--purple-soft), var(--blue));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  letter-spacing: .1em; margin-bottom: .5rem;
+  letter-spacing: .08em; margin-bottom: .5rem;
+  line-height: 1.6;
 }
 .exp-company { font-size: .8rem; color: var(--muted); }
 .exp-role { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: .6rem; }

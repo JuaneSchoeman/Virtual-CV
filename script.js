@@ -164,17 +164,6 @@ function fetchGitHubProjects(username) {
         });
       }, { threshold: 0.1 });
       container.querySelectorAll('.proj-card').forEach(el => cardObs.observe(el));
-
-      // Re-run magnetic buttons on new cards' links
-      container.querySelectorAll('.proj-links-top a').forEach(btn => {
-        btn.addEventListener('mousemove', e => {
-          const r  = btn.getBoundingClientRect();
-          const dx = (e.clientX - (r.left + r.width  / 2)) * 0.32;
-          const dy = (e.clientY - (r.top  + r.height / 2)) * 0.32;
-          btn.style.transform = `translate(${dx}px, ${dy}px)`;
-        });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-      });
     })
     .catch(err => {
       console.error('Could not load GitHub repos:', err);
@@ -403,16 +392,5 @@ function initScrollReveal() {
 /* ─── MAGNETIC BUTTONS ─── */
 
 function initMagneticButtons() {
-  // Re-query after render
-  setTimeout(() => {
-    document.querySelectorAll('.btn-fill, .btn-ghost, .contact-btn').forEach(btn => {
-      btn.addEventListener('mousemove', e => {
-        const r  = btn.getBoundingClientRect();
-        const dx = (e.clientX - (r.left + r.width  / 2)) * 0.32;
-        const dy = (e.clientY - (r.top  + r.height / 2)) * 0.32;
-        btn.style.transform = `translate(${dx}px, ${dy}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-    });
-  }, 200);
+  // Magnetic buttons removed
 }
