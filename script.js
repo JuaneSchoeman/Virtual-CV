@@ -401,7 +401,7 @@ function initScrollReveal() {
   }, { threshold: 0.1 });
   // Re-query after JSON render (slight delay to allow DOM update)
   setTimeout(() => {
-    document.querySelectorAll('.exp-item, .proj-card, .edu-card').forEach(el => cardObs.observe(el));
+    document.querySelectorAll('.exp-item, .proj-card, .edu-card, .cert-card').forEach(el => cardObs.observe(el));
   }, 100);
 }
 
