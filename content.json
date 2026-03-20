@@ -1,8 +1,8 @@
 {
   "name": "Juané Schoeman",
-  "title": "BSc Honours Student — Computer Science & IT",
+  "title": "BSc Honours Student — Computer Science and Information Technology",
   "github_username": "JuaneSchoeman",
-  "greeting": "✦ Welcome to my corner of the universe",
+  "greeting": "Hi, I'm",
   "bio": "Detail-oriented and adaptable IT student with strong skills in Java, C#(.NET), and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic. Eager to apply my back-end and database knowledge to real-world software solutions.",
   "typewriterPhrases": [
     "BSc Honours Student_",
@@ -12,7 +12,7 @@
   ],
   "stats": [
     { "label": "Based in",           "value": "Potchefstroom, SA 🇿🇦" },
-    { "label": "Degree",             "value": "BSc Hons Computer Science & IT" },
+    { "label": "Degree",             "value": "BSc Hons CS and IT" },
     { "label": "Status",             "value": "● Open to work", "accent": true },
     { "label": "Favourite language", "value": "C# (.NET)" },
     { "label": "Coffee order",       "value": "Oat flat white ☕" }
@@ -25,7 +25,7 @@
   "skills": [
     {
       "category": "Languages",
-      "items": ["C# (.NET)", "Java", "SQL", "JavaScript", "HTML", "CSS"]
+      "items": ["C# (.NET)", "Java", "Python", "GDScript", "SQL", "JavaScript", "HTML", "CSS"]
     },
     {
       "category": "Frameworks & Libraries",
@@ -33,7 +33,7 @@
     },
     {
       "category": "Tools & Platforms",
-      "items": ["Git", "GitHub", "VS Code", "Excel", "Figma"]
+      "items": ["Git", "GitHub", "VS Code", "Excel"]
     },
     {
       "category": "Soft Skills",
@@ -42,8 +42,19 @@
   ],
   "experience": [
     {
+      "date": "Feb 2026 — Present",
+      "company": "North-West University, Potchefstroom",
+      "role": "Head Student Assistant",
+      "description": [
+        "Lead a team of student assistants for the Introduction to Programming course.",
+        "Coordinate marking, student support sessions, and test supervision across the team.",
+        "Serve as the primary point of contact between students and the lecturer.",
+        "Provide academic guidance and support to first-year students learning to program."
+      ]
+    },
+    {
       "date": "Jun 2024 — Jul 2024",
-      "company": "DankoSpark · Potchefstroom",
+      "company": "DankoSpark, Potchefstroom",
       "role": "Software Development Intern",
       "description": [
         "Assisted in developing a website feature using Angular.",
@@ -53,33 +64,24 @@
     },
     {
       "date": "Feb 2024 — Jun 2024",
-      "company": "North-West University · Potchefstroom",
+      "company": "North-West University, Potchefstroom",
       "role": "Student Assistant",
       "description": [
         "Marked practical assignments for the Introduction to Programming course.",
         "Assisted students with practical work and provided one-on-one academic support.",
         "Supervised tests and gained experience in assessment and exam invigilation."
       ]
-    },
-    {
-      "date": "Aug 2022 — Oct 2022",
-      "company": "Mediclinic · Potchefstroom",
-      "role": "Pharmacy Student (Practical)",
-      "description": [
-        "Filled prescriptions and restocked medications as part of a practical pharmacy project.",
-        "Developed precision and adherence to strict procedures in a regulated healthcare environment."
-      ]
     }
   ],
   "education": [
     {
-      "year": "2025 — Present",
+      "year": "2026 — Present",
       "degree": "Bachelor of Science Honours in Computer Science and Information Technology",
       "institution": "North-West University, Potchefstroom"
     },
     {
-      "year": "2023 — 2024",
-      "degree": "BSc Information Technology",
+      "year": "2023 — 2025",
+      "degree": "Bachelor of Science in Information Technology",
       "institution": "North-West University, Potchefstroom"
     }
   ],
