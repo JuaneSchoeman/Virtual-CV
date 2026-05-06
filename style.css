@@ -426,6 +426,10 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
 }
 .edu-degree { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: .4rem; }
 .edu-school { color: var(--muted); font-size: .82rem; }
+.edu-note {
+  margin-top: .7rem; font-size: .78rem; color: var(--purple-soft);
+  font-family: 'DM Mono', monospace; letter-spacing: .03em; line-height: 1.5;
+}
 
 /* ── Contact ── */
 #contact { text-align: center; }

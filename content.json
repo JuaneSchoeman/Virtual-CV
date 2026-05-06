@@ -3,18 +3,18 @@
   "title": "BSc Honours Student — Computer Science and Information Technology",
   "github_username": "JuaneSchoeman",
   "greeting": "Hi, I'm",
-  "bio": "Detail-oriented and adaptable IT student with strong skills in Java, C#(.NET), and SQL. Gained hands-on experience during a software development internship, including data management and working in agile teams. Known for analytical thinking, precision, and a strong work ethic. Eager to apply my back-end and database knowledge to real-world software solutions.",
+  "bio": "Detail-oriented Honours CS student at NWU with a focus on back-end systems and well-structured databases. Python and SQL are my primary tools, with supporting experience in Java, C#, and .NET. Industry-tested through a software development internship, and currently researching a clinical dosage calculator where computational precision has real patient safety implications.",
   "typewriterPhrases": [
     "BSc Honours Student_",
-    "Software Developer_",
-    "Creative Problem Solver_",
+    "Python Developer_",
+    "SQL & Database Enthusiast_",
     "Always Learning_"
   ],
   "stats": [
     { "label": "Based in",           "value": "Potchefstroom, SA 🇿🇦" },
     { "label": "Degree",             "value": "BSc Hons CS and IT" },
     { "label": "Status",             "value": "● Open to work", "accent": true },
-    { "label": "Favourite language", "value": "C# (.NET)" },
+    { "label": "Favourite language", "value": "Python 🐍" },
     { "label": "Coffee order",       "value": "Oat flat white ☕" }
   ],
   "contact": {
@@ -25,19 +25,19 @@
   "skills": [
     {
       "category": "Languages",
-      "items": ["C# (.NET)", "Java", "Python", "GDScript", "SQL", "JavaScript", "HTML", "CSS"]
+      "items": ["Python", "SQL", "Java", "C# (.NET)", "JavaScript", "HTML", "CSS", "GDScript"]
     },
     {
-      "category": "Frameworks & Libraries",
-      "items": ["Angular", ".NET", "Node.js", "Bootstrap"]
+      "category": "Databases",
+      "items": ["MySQL", "Oracle SQL", "Database Design", "Query Optimisation"]
     },
     {
-      "category": "Tools & Platforms",
-      "items": ["Git", "GitHub", "VS Code", "Excel"]
+      "category": "Frameworks & Tools",
+      "items": ["Angular", ".NET", "Node.js", "Bootstrap", "Git", "GitHub", "VS Code", "MATLAB"]
     },
     {
       "category": "Soft Skills",
-      "items": ["Problem solving", "Team collaboration", "Communication", "Analytical thinking", "Precision"]
+      "items": ["Analytical thinking", "Precision", "Team collaboration", "Communication", "Problem solving"]
     }
   ],
   "experience": [
@@ -71,13 +71,24 @@
         "Assisted students with practical work and provided one-on-one academic support.",
         "Supervised tests and gained experience in assessment and exam invigilation."
       ]
+    },
+    {
+      "date": "Aug 2022 — Oct 2022",
+      "company": "Mediclinic Potchefstroom",
+      "role": "Pharmacy Student Intern",
+      "description": [
+        "Filled prescriptions and managed medication stock under strict clinical protocols.",
+        "Developed precision and procedural discipline in a regulated healthcare environment.",
+        "Healthcare background directly informs current research into accurate clinical dosage calculations."
+      ]
     }
   ],
   "education": [
     {
       "year": "2026 — Present",
-      "degree": "Bachelor of Science Honours in Computer Science and Information Technology",
-      "institution": "North-West University, Potchefstroom"
+      "degree": "BSc Honours in Computer Science and Information Technology",
+      "institution": "North-West University, Potchefstroom",
+      "note": "Research: Clinical dosage calculator for weight- and BSA-based drug calculations"
     },
     {
       "year": "2023 — 2025",
@@ -87,22 +98,64 @@
   ],
   "certifications": [
     {
-      "title": "MATLAB Certification 1",
+      "title": "MATLAB Onramp",
       "issuer": "MathWorks",
       "year": "2024",
-      "url": "https://your-certificate-url-here"
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=e9969375-ab81-41fb-8176-0b6b2ef984b8&"
     },
     {
-      "title": "MATLAB Certification 2",
+      "title": "App Building Onramp",
       "issuer": "MathWorks",
       "year": "2024",
-      "url": "https://your-certificate-url-here"
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=3ac77cbb-0bb9-4651-8d04-48a454718688&"
     },
     {
-      "title": "MATLAB Certification 3",
+      "title": "Statistics Onramp",
       "issuer": "MathWorks",
       "year": "2024",
-      "url": "https://your-certificate-url-here"
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=0dd9f23e-4da0-4acd-9a04-8c4eac9b07eb&"
+    },
+    {
+      "title": "Image Processing Onramp",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=092a0bb3-d3d6-4914-8956-bec23004ac93&"
+    },
+    {
+      "title": "Deep Learning Onramp",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=8a7f9f36-4cfe-40fb-948a-21508376eca8&"
+    },
+    {
+      "title": "Machine Learning Onramp",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=4e93353d-f0e7-43b5-9ef8-82b26854ce81&"
+    },
+    {
+      "title": "Computer Vision Onramp",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=af03d1d2-02df-4e44-b3c5-98f38d48f31e&"
+    },
+    {
+      "title": "MATLAB Visualization and Graphics",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://www.credly.com/badges/9aeb2c85-767d-4d27-96f0-6ea7a1052acd/linked_in_profile"
+    },
+    {
+      "title": "Basic MATLAB Skills",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://www.credly.com/badges/8456c94c-167d-4720-a7a0-ec37af33305d/linked_in_profile"
+    },
+    {
+      "title": "Data Analysis and Processing in MATLAB",
+      "issuer": "MathWorks",
+      "year": "2024",
+      "url": "https://www.credly.com/badges/010c7166-d861-4a0e-82f6-fc50d13bb856/linked_in_profile"
     }
   ],
   "volunteering": [

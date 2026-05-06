@@ -197,8 +197,8 @@ function renderEducation(education) {
       <p class="edu-year">${edu.year}</p>
       <h3 class="edu-degree">${edu.degree}</h3>
       <p class="edu-school">${edu.institution}</p>
-    </div>
-  `).join('');
+      ${edu.note ? `<p class="edu-note">${edu.note}</p>` : ''}
+    </div>`).join('');
 }
 
 function renderCertifications(certifications) {
