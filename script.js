@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function renderAll(data) {
-  document.title = `${data.name} — ${data.title}`;
+  document.title = `${data.name} ${data.title}`;
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   renderHero(data);
