@@ -149,7 +149,7 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
 }
 .hero-greeting {
   font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--purple-soft);
-  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1.2rem;
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1.2rem; 
   animation: fadeUp .6s ease forwards;
   opacity: 1;
   visibility: visible;
@@ -177,7 +177,7 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
   font-size: .92rem; line-height: 1.85; max-width: 480px;
   animation: fadeUp .6s .3s ease both;
 }
-.hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; animation: fadeUp .6s .4s ease both; }
+.hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; animation: fadeUp .6s .4s ease both; }
 
 /* ── Buttons ── */
 .btn-fill {
@@ -233,11 +233,11 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
   background: linear-gradient(135deg, var(--purple-soft), var(--pink));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.hero-dots {
+/*.hero-dots {
   position: absolute; bottom: -2rem; right: -2rem;
   display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; opacity: .3;
 }
-.hero-dots span { width: 4px; height: 4px; border-radius: 50%; background: var(--purple-soft); display: block; }
+.hero-dots span { width: 4px; height: 4px; border-radius: 50%; background: var(--purple-soft); display: block; }*/
 
 /* ── Skills ── */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.2rem; }
