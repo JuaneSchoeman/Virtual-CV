@@ -142,7 +142,7 @@ section { position: relative; z-index: 1; padding: 8rem 5rem; max-width: 1180px;
 .sec-reveal.in-view { opacity: 1; transform: translateY(0); }
 
 /* ── Hero ── */
-#hero { min-height: 100vh; max-width: 100%; display: flex; align-items: center; padding: 0; padding-top: 120px; }
+#hero { min-height: 100vh; max-width: 100%; display: flex; align-items: center; padding: 0; padding-top: 80px; }
 .hero-inner {
   max-width: 1180px; width: 100%; margin: 0 auto; padding: 0 5rem;
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
