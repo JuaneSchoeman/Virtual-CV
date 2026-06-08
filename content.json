@@ -1,6 +1,6 @@
 {
   "name": "Juané Schoeman",
-  "title": "BSc Honours Student — Computer Science and Information Technology",
+  "title": "BSc Honours Student in Computer Science and Information Technology",
   "github_username": "JuaneSchoeman",
   "greeting": "Hi, I'm",
   "bio": "Detail-oriented Honours CS student at NWU with a focus on back-end systems and well-structured databases. Python and SQL are my primary tools, with supporting experience in Java, C#, and .NET. Industry-tested through a software development internship, and currently researching a clinical dosage calculator where computational precision has real patient safety implications.",
@@ -8,14 +8,15 @@
     "BSc Honours Student_",
     "Python Developer_",
     "SQL & Database Enthusiast_",
-    "Always Learning_"
+    "Always Learning_",
+    "Always Curious"
   ],
   "stats": [
     { "label": "Based in",           "value": "Potchefstroom, SA 🇿🇦" },
     { "label": "Degree",             "value": "BSc Hons CS and IT" },
     { "label": "Status",             "value": "● Open to work", "accent": true },
     { "label": "Favourite language", "value": "Python 🐍" },
-    { "label": "Coffee order",       "value": "Oat flat white ☕" }
+    { "label": "Coffee order",       "value": "Hazelnut latte ☕" }
   ],
   "contact": {
     "email": "jua.schoeman@gmail.com",
